@@ -554,7 +554,7 @@ class compression:
                                                                                     z=z+1
                                                                 sub_info=add_bits1+sub1
                                                                 
-                                                                find_matches1=str_find_tree_maches.find(sub2, find_matches1_number1+4, end)
+                                                                find_matches1=str_find_tree_maches.find(sub2, start+4, end)
                                                                 mathes=mathes+1
 
                                                                 if find_matches1!="-1":
@@ -574,7 +574,7 @@ class compression:
                                                                                     z=z+1
                                                                 sub_info=add_bits2+sub1
                                                                 
-                                                                find_matches1=str_find_tree_maches.find(sub2, find_matches1_number2+4, end)
+                                                                find_matches1=str_find_tree_maches.find(sub2, find_matches1_number1+4, end)
                                                                 mathes=mathes+1
                                                                 find_matches1_number3=int(find_matches1)
                                                                 if find_matches1!="-1":
@@ -597,7 +597,7 @@ class compression:
                                                                                     z=z+1
                                                                 sub_info2=add_bits8+sub1
                                                                 
-                                                                find_matches2=str_find_tree_maches.find(sub_info, find_matches1_number3+4, end)
+                                                                find_matches2=str_find_tree_maches.find(sub_info, find_matches1_number2+4, end)
                                                                 mathes=mathes+1
                                                                                 
                                                               
