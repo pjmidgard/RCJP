@@ -4,8 +4,9 @@ RCJP
 Algorithm RCJP:
 1. Spring-109 Reverso:
 start from %2 like this:
-
+[C]
 if assxw>=e3%2:  
+[/C]
        
 Continue             
                               
