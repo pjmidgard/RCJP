@@ -494,6 +494,8 @@ class compression:
                                     c=c+2
 
                                 if cvf1==1:
+                                    
+                                    
 
                                     start=0
                                     end=64
@@ -527,7 +529,7 @@ class compression:
                                                                             while z<count_bits:
                                                                                     add_bits18="0"+add_bits18
                                                                                     z=z+1
-                                                                sub_info=add_bits18+sub1
+                                                                sub_info="0000"
                                                                 
                                                                 find_matches1=str_find_tree_maches.find(sub_info, start, end)
                                                                 mathes=mathes+1
@@ -536,7 +538,11 @@ class compression:
                                                                 if find_matches1!="-1":
                                                                     
                                                                     find_matches1_number1=int(find_matches1)
-                                                                    sub2=sub_info
+                                                                    sub2="0000"
+                                                                    
+                                                                    
+                                                                    
+                                                                    
                                         mathes=0
                                         while mathes!=15:
                                                 
@@ -642,7 +648,7 @@ class compression:
                                     count_bits=8-lenf%8
                                     z=0
                                     if count_bits!=0:
-                                        if count_bits!=4:
+                                        if count_bits!=8:
                                             while z<count_bits:
                                                                                     add_bits118="0"+add_bits118
                                                                                     z=z+1
