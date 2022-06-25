@@ -1,4 +1,5 @@
 # RCJP
+RLE random with zero compression 
 RCJP
 
 Algorithm RCJP:
