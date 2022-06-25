@@ -3,9 +3,12 @@ RCJP
 
 Algorithm RCJP:
 1. Spring-109 Reverso:
-[C]
-                                
-                              if assxw>=e3%2:
+start from %2 like this:
+
+if assxw>=e3%2:  
+       
+Continue             
+                              
 
                                                
 
