@@ -597,7 +597,7 @@ class compression:
                                                                                     z=z+1
                                                                 sub_info2=add_bits8+sub1
                                                                 
-                                                                find_matches2=str_find_tree_maches.find(sub2, find_matches1_number3+4, end)
+                                                                find_matches2=str_find_tree_maches.find(sub_info, find_matches1_number3+4, end)
                                                                 mathes=mathes+1
                                                                                 
                                                               
@@ -631,7 +631,9 @@ class compression:
                                     
                                         block=block+128
                                             
-
+                                    if block_compression!=block_compression1 and block_compression1==1:
+                                        sda6=sda6+"1"+sda7
+                                        
                                     print(compress_no)
                                     print(compress_yes)
                                    
