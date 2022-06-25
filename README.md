@@ -127,7 +127,7 @@ Continue
 2. find three matches 3 matches change to two next three block 128 bits "RCJP":
 [C]
 
-                                      start=0
+                                    start=0
                                     end=64
                                     sda5=""
                                     sda4=""
