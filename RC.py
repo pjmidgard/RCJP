@@ -499,9 +499,11 @@ class compression:
                                     compress_yes=0
                                     long2=len(sda3)
                                     times2=long2//255
+                                    
+                                    start=-1
                                     while  times_compression!=times2:
 
-                                                start=0
+                                                start=start+1
                                                 end=64
                                                 sda5=""
                                                 sda4=""
@@ -515,7 +517,7 @@ class compression:
                                                 block_compression=0
                                                 long=len(sda3)
                                                 while block<long:
-                                                    str_find_tree_maches=sda3[block:block+128]
+                                                    str_find_tree_maches=sda3[block:block+128+start]
                                                     
                                                     mathes=0
                                                     while mathes!=15:
@@ -640,7 +642,7 @@ class compression:
                                                         sda7=""
                                                         
                                                 
-                                                    block=block+128
+                                                    block=block+start+128
                                                      
                                                 times_compression=times_compression+1      
                                                 if block_compression!=block_compression1 and block_compression1==1:
