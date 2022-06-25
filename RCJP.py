@@ -632,8 +632,23 @@ class compression:
                                         block=block+128
                                             
                                     if block_compression!=block_compression1 and block_compression1==1:
-                                        sda6=sda6+"1"+sda7
+                                        sda6=sda6+sda7
+                                    sda6="1"+sda6
+                                    lenf=len(sda6)
                                         
+                                                  
+
+                                    add_bits118=""
+                                    count_bits=8-lenf%8
+                                    z=0
+                                    if count_bits!=0:
+                                        if count_bits!=4:
+                                            while z<count_bits:
+                                                                                    add_bits118="0"+add_bits118
+                                                                                    z=z+1
+                                                                
+                                                                
+                                    sda6=add_bits118+sda6
                                     print(compress_no)
                                     print(compress_yes)
                                    
