@@ -494,152 +494,157 @@ class compression:
                                     c=c+2
 
                                 if cvf1==1:
-                                    
-                                    
+                                    times_compression=0   
+                                    while  times_compression!=100000:
 
-                                    start=0
-                                    end=64
-                                    sda5=""
-                                    sda4=""
-                                    sda6=""
-                                    sda7=""
-                                    compress_no=0
-                                    compress_yes=0
-
-                                    block=0
-                                    Find=0
-                                    block_compression1=0
-                                    block_compression=0
-                                    long=len(sda3)
-                                    while block<long:
-                                        str_find_tree_maches=sda3[block:block+128]
-                                        
-                                        mathes=0
-                                        while mathes!=15:
-                                            
-                                            
-                                                                sub1=bin(mathes)[2:]
-                                                                lenf=len(sub1)
-
-                                                                add_bits18=""
-                                                                count_bits=4-lenf%4
-                                                                z=0
-                                                                if count_bits!=0:
-                                                                    if count_bits!=4:
-                                                                            while z<count_bits:
-                                                                                    add_bits18="0"+add_bits18
-                                                                                    z=z+1
-                                                                sub_info="0000"
-                                                                
-                                                                find_matches1=str_find_tree_maches.find(sub_info, start, end)
-                                                                mathes=mathes+1
+                                                start=0
+                                                end=64
+                                                sda5=""
+                                                sda4=""
+                                                sda6=""
+                                                sda7=""
+                                                compress_no=0
+                                                compress_yes=0
+            
+                                                block=0
+                                                Find=0
+                                                block_compression1=0
+                                                block_compression=0
+                                                long=len(sda3)
+                                                while block<long:
+                                                    str_find_tree_maches=sda3[block:block+128]
+                                                    
+                                                    mathes=0
+                                                    while mathes!=15:
+                                                        
+                                                        
+                                                                            sub1=bin(mathes)[2:]
+                                                                            lenf=len(sub1)
+            
+                                                                            add_bits18=""
+                                                                            count_bits=4-lenf%4
+                                                                            z=0
+                                                                            if count_bits!=0:
+                                                                                if count_bits!=4:
+                                                                                        while z<count_bits:
+                                                                                                add_bits18="0"+add_bits18
+                                                                                                z=z+1
+                                                                            sub_info="0000"
+                                                                            
+                                                                            find_matches1=str_find_tree_maches.find(sub_info, start, end)
+                                                                            mathes=mathes+1
+                                                                                            
+                                                    
+                                                                            if find_matches1!="-1":
                                                                                 
-                                        
-                                                                if find_matches1!="-1":
-                                                                    
-                                                                    find_matches1_number1=int(find_matches1)
-                                                                    sub2="0000"
-                                                                    
-                                                                    
-                                                                    
-                                                                    
-                                        mathes=0
-                                        while mathes!=15:
-                                                
-                                                
-                                                                sub1=bin(mathes)[2:]
-                                                                lenf=len(sub1)
-
-                                                                add_bits1=""
-                                                                count_bits=4-lenf%4
-                                                                z=0
-                                                                if count_bits!=0:
-                                                                    if count_bits!=4:
-                                                                            while z<count_bits:
-                                                                                    add_bits1="0"+add_bits1
-                                                                                    z=z+1
-                                                                sub_info=add_bits1+sub1
-                                                                
-                                                                find_matches1=str_find_tree_maches.find(sub2, start+4, end)
-                                                                mathes=mathes+1
-
-                                                                if find_matches1!="-1":
-                                                                        find_matches1_number2=int(find_matches1)
-                                        mathes=0
-                                        while mathes!=15:
-                                                                sub1=bin(mathes)[2:]
-                                                                lenf=len(sub1)
-
-                                                                add_bits2=""
-                                                                count_bits=4-lenf%4
-                                                                z=0
-                                                                if count_bits!=0:
-                                                                    if count_bits!=4:
-                                                                            while z<count_bits:
-                                                                                    add_bits2="0"+add_bits2
-                                                                                    z=z+1
-                                                                sub_info=add_bits2+sub1
-                                                                
-                                                                find_matches1=str_find_tree_maches.find(sub2, find_matches1_number1+4, end)
-                                                                mathes=mathes+1
-                                                                find_matches1_number3=int(find_matches1)
-                                                                if find_matches1!="-1":
-                                                                    Find=1
-                                        mathes=0
-                                        while mathes!=7:
-                                                            
-                                                      
-                                                            
-                                                                sub1=bin(mathes)[2:]
-                                                                lenf=len(sub1)
-
-                                                                add_bits8=""
-                                                                count_bits=3-lenf%3
-                                                                z=0
-                                                                if count_bits!=0:
-                                                                    if count_bits!=3:
-                                                                            while z<count_bits:
-                                                                                    add_bits8="0"+add_bits8
-                                                                                    z=z+1
-                                                                sub_info2=add_bits8+sub1
-                                                                
-                                                                find_matches2=str_find_tree_maches.find(sub_info, find_matches1_number2+4, end)
-                                                                mathes=mathes+1
+                                                                                find_matches1_number1=int(find_matches1)
+                                                                                sub2="0000"
                                                                                 
-                                                              
-                                                                if find_matches2!="-1" and Find==1:
-                                                                    Find=0
-                                                                    find_matches1_number3=int(find_matches2)
-                                                                    sda4=str_find_tree_maches[:find_matches1_number2-4]+sub_info2+str_find_tree_maches[find_matches1_number2:]
-                                                                    sda5=sda5+sda4
-                                                                    block_compression=1
-                                                                    if block_compression==1:
-                                                                        block_compression=2
+                                                                                
+                                                                                
+                                                                                
+                                                    mathes=0
+                                                    while mathes!=15:
                                                             
-                                        sda7=str_find_tree_maches        
-                                        block_compression1=block_compression1+1 
-                                        if block_compression==block_compression1 and block_compression1==2:
-                                            compress_yes=compress_yes+1
-                                            block_compression=0
-                                            block_compression1=0
-                                            sda6=sda6+"0"+sda5
-                                            sda5=""
-                                            sda7=""
-
-                                        if block_compression!=block_compression1 and block_compression1==2:
-                                            compress_no=compress_no+1
-                                            block_compression=0
-                                            block_compression1=0
-                                            sda6=sda6+"1"+sda7
-                                            sda5=""
-                                            sda7=""
-                                            
-                                    
-                                        block=block+128
-                                            
-                                    if block_compression!=block_compression1 and block_compression1==1:
-                                        sda6=sda6+sda7
-                                    sda6="1"+sda6
+                                                            
+                                                                            sub1=bin(mathes)[2:]
+                                                                            lenf=len(sub1)
+            
+                                                                            add_bits1=""
+                                                                            count_bits=4-lenf%4
+                                                                            z=0
+                                                                            if count_bits!=0:
+                                                                                if count_bits!=4:
+                                                                                        while z<count_bits:
+                                                                                                add_bits1="0"+add_bits1
+                                                                                                z=z+1
+                                                                            sub_info=add_bits1+sub1
+                                                                            
+                                                                            find_matches1=str_find_tree_maches.find(sub2, start+4, end)
+                                                                            mathes=mathes+1
+            
+                                                                            if find_matches1!="-1":
+                                                                                    find_matches1_number2=int(find_matches1)
+                                                    mathes=0
+                                                    while mathes!=15:
+                                                                            sub1=bin(mathes)[2:]
+                                                                            lenf=len(sub1)
+            
+                                                                            add_bits2=""
+                                                                            count_bits=4-lenf%4
+                                                                            z=0
+                                                                            if count_bits!=0:
+                                                                                if count_bits!=4:
+                                                                                        while z<count_bits:
+                                                                                                add_bits2="0"+add_bits2
+                                                                                                z=z+1
+                                                                            sub_info=add_bits2+sub1
+                                                                            
+                                                                            find_matches1=str_find_tree_maches.find(sub2, find_matches1_number1+4, end)
+                                                                            mathes=mathes+1
+                                                                            find_matches1_number3=int(find_matches1)
+                                                                            if find_matches1!="-1":
+                                                                                Find=1
+                                                    mathes=0
+                                                    while mathes!=7:
+                                                                        
+                                                                  
+                                                                        
+                                                                            sub1=bin(mathes)[2:]
+                                                                            lenf=len(sub1)
+            
+                                                                            add_bits8=""
+                                                                            count_bits=3-lenf%3
+                                                                            z=0
+                                                                            if count_bits!=0:
+                                                                                if count_bits!=3:
+                                                                                        while z<count_bits:
+                                                                                                add_bits8="0"+add_bits8
+                                                                                                z=z+1
+                                                                            sub_info2=add_bits8+sub1
+                                                                            
+                                                                            find_matches2=str_find_tree_maches.find(sub_info, find_matches1_number2+4, end)
+                                                                            mathes=mathes+1
+                                                                                            
+                                                                          
+                                                                            if find_matches2!="-1" and Find==1:
+                                                                                Find=0
+                                                                                find_matches1_number3=int(find_matches2)
+                                                                                sda4=str_find_tree_maches[:find_matches1_number2-4]+sub_info2+str_find_tree_maches[find_matches1_number2:]
+                                                                                sda5=sda5+sda4
+                                                                                block_compression=1
+                                                                                if block_compression==1:
+                                                                                    block_compression=2
+                                                                        
+                                                    sda7=str_find_tree_maches        
+                                                    block_compression1=block_compression1+1 
+                                                    if block_compression==block_compression1 and block_compression1==2:
+                                                        compress_yes=compress_yes+1
+                                                        block_compression=0
+                                                        block_compression1=0
+                                                        sda6=sda6+"0"+sda5
+                                                        sda5=""
+                                                        sda7=""
+            
+                                                    if block_compression!=block_compression1 and block_compression1==2:
+                                                        compress_no=compress_no+1
+                                                        block_compression=0
+                                                        block_compression1=0
+                                                        sda6=sda6+"1"+sda7
+                                                        sda5=""
+                                                        sda7=""
+                                                        
+                                                
+                                                    block=block+128
+                                                     
+                                                times_compression=times_compression+1      
+                                                if block_compression!=block_compression1 and block_compression1==1:
+                                                    sda6=sda6+sda7
+                                                    
+                                                sda3=sda6
+                                                sda6=""
+                                                 
+                                    sda6="1"+sda3
                                     lenf=len(sda6)
                                         
                                                   
