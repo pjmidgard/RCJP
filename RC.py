@@ -496,8 +496,10 @@ class compression:
                                 if cvf1==1:
                                     times_compression=0  
                                     compress_no=0
-                                    compress_yes=0   
-                                    while  times_compression!=1000:
+                                    compress_yes=0
+                                    long2=len(sda3)
+                                    times2=long2//255
+                                    while  times_compression!=times2:
 
                                                 start=0
                                                 end=64
