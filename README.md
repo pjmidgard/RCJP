@@ -1,8 +1,8 @@
-# RCJP
-RLE random with zero compression 
-RCJP
+# RC
+Random Compression 
 
-Algorithm RCJP:
+
+Algorithm RC:
 1. Spring-109 Reverso:
 start from %2 like this:
 [C]
@@ -124,5 +124,5 @@ Continue
 
                                 if cvf1==1:
 
-[/C]
-RLE find three matches 3 that "0000" matches change to two next three block 128 bits
+[/C] 
+Find three matches 3 that "0000" matches change to two next three block 128 bits
