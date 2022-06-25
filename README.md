@@ -13,176 +13,7 @@ Continue
 
                                                
 
-                                            if e4=="1" and e3== e3%2:
-                                                sda3=sda3+"0"
-                                                e4="1"
-                                                e4=""
-                                                
-                                            elif e4=="0" and e3== e3%2:
-                                                sda3=sda3+"1"
-                                                e4="1"
-                                                e4=""                                                    
-                                            elif e4=="1":
-                                                    sda3=sda3+"0"
-                                                    e4="0"
-                                                    e4=""
-                                            elif e4=="1" and e3== e3%3:
-                                                    sda3=sda3+"0"
-                                                    e4="0"
-                                                    e4=""
-                                            elif e4=="0" and e3== e3%3:
-                                                    sda3=sda3+"1"
-                                                    e4="0"
-                                                    e4=""   
-                                            elif e4=="1" and e3== e3%4:
-                                                    sda3=sda3+"1"
-                                                    e4="0"
-                                                    e4=""
-                                            elif e4=="0" and e3== e3%4:
-                                                    sda3=sda3+"0"
-                                                    e4="0"
-                                                    e4=""                                                             
-                                            elif e4=="0" and e3== e3%5:
-                                                    sda3=sda3+"1"
-                                                    e4="0"
-                                                    e4=""   
-                                                                           
-                                            elif e4=="1" and e3== e3%5:
-                                                    sda3=sda3+"0"
-                                                    e4="0"
-                                                    e4=""
-                                                    
-                                            elif e4=="0" and e3== e3%6:
-                                                    sda3=sda3+"0"
-                                                    e4="0"
-                                                    e4=""   
-                                                                           
-                                            elif e4=="1" and e3== e3%6:
-                                                    sda3=sda3+"1"
-                                                    e4="0"
-                                                    e4=""                                                                                    
-                                            elif e4=="0" and e3== e3%7:
-                                                    sda3=sda3+"1"
-                                                    e4="0"
-                                                    e4=""   
-                                                                           
-                                            elif e4=="0" and e3== e3%7:
-                                                    sda3=sda3+"1"
-                                                    e4="0"
-                                                    e4=""    
-                                            elif e4=="0" and e3== e3%8:
-                                                    sda3=sda3+"1"
-                                                    e4="0"
-                                                    e4=""   
-                                                                           
-                                            elif e4=="0" and e3== e3%8:
-                                                    sda3=sda3+"1"
-                                                    e4="0"
-                                                    e4=""    
-                                            elif e4=="0" and e3== e3%9:
-                                                    sda3=sda3+"0"
-                                                    e4="0"
-                                                    e4=""   
-                                                                           
-              
-                                            elif e4=="1" and e3== e3%9:
-                                                    sda3=sda3+"1"
-                                                    e4="0"
-                                                    e4=""                                                                                                                                                                                                                                                                                                                                                        
-                                            elif e4=="0" and e3== e3%11:
-                                                    sda3=sda3+"1"
-                                                    e4="0"
-                                                    e4=""   
-                                                                           
-                                            elif e4=="0" and e3== e3%11:
-                                                    sda3=sda3+"1"
-                                                    e4="0"
-                                                    e4=""       
-                                                                           
-
-                                                    
-                                                    
-                                              
-
-
-                                
-                                if e4=="1" and e3== e3%9+assxw:
-                                	sda3=sda3+"0"
-                                	e4="0"
-                                	e4=""
-                                
-                                elif e4=="1" and e3== e3%8+assxw:
-                                    sda3=sda3+"0"
-                                    e4="1"
-                                    e4=""
-                                elif e4=="1" and e3== e3%7+sw2:
-                                	sda3=sda3+"0"
-                                	e4="0"
-                                	e4=""
-                                    
-                                elif e4=="1" and e3== e3%8+assxw:
-                                    sda3=sda3+"0"
-                                    e4="1"
-                                    e4=""
-                                elif e4=="1" and e3== e3%7+sw2:
-                                	sda3=sda3+"0"
-                                	e4="0"
-                                	e4=""
-                                    
-                                elif e4=="1" and e3== e3%6+sw2:
-                                    sda3=sda3+"0"
-                                    e4="1"
-                                    e4=""   
-                                
-                                elif e4=="1" and e3== e3%7+sw1:
-                                	sda3=sda3+"0"
-                                	e4="0"
-                                	e4=""
-                                    
-                                elif e4=="1" and e3== e3%6+sw1:
-                                    sda3=sda3+"0"
-                                    e4="1"
-                                    e4=""
-                                elif e4=="1" and e3== e3%7+sw:
-                                	sda3=sda3+"0"
-                                	e4="0"
-                                	e4=""
-                                    
-                                elif e4=="1" and e3== e3%6+sw:
-                                    sda3=sda3+"0"
-                                    e4="1"
-                                    e4=""
-                                
-                                elif e4=="1" and e3== e3%5+sw:
-                                	sda3=sda3+"0"
-                                	e4="0"
-                                	e4=""
-                                elif e4=="1" and e3== e3%2+sw7:
-                                    sda3=sda3+"0"
-                                    e4="1"
-                                    e4="" 
-                                elif e4=="1" and e3== e3%2+sw6:
-                                    sda3=sda3+"0"
-                                    e4="1"
-                                    e4="" 
-                                
-                                elif e4=="1" and e3== e3%18+sw6:
-                                    sda3=sda3+"0"
-                                    e4="1"
-                                    e4=""	
-                                elif e4=="1" and e3== e3%18+sw6:
-                                    sda3=sda3+"0"
-                                    e4="1"
-                                    e4=""
-                                elif e4=="1" and e3== e3%17+sw6:
-                                    sda3=sda3+"0"
-                                    e4="1"
-                                    e4=""
-                                    
-   
-                                elif e4=="1" and e3== e3%4+sw4:
-                                    sda3=sda3+"0"
-                                    e4="1"
+                                            
                                     e4=""
                                     
                            
@@ -296,7 +127,7 @@ Continue
 2. find three matches 3 matches change to two next three block 128 bits "RCJP":
 [C]
 
-                                    start=0
+                                      start=0
                                     end=64
                                     sda5=""
                                     sda4=""
@@ -355,7 +186,7 @@ Continue
                                                                                     z=z+1
                                                                 sub_info=add_bits1+sub1
                                                                 
-                                                                find_matches1=str_find_tree_maches.find(sub2, find_matches1_number1+4, end)
+                                                                find_matches1=str_find_tree_maches.find(sub2, start+4, end)
                                                                 mathes=mathes+1
 
                                                                 if find_matches1!="-1":
@@ -375,7 +206,7 @@ Continue
                                                                                     z=z+1
                                                                 sub_info=add_bits2+sub1
                                                                 
-                                                                find_matches1=str_find_tree_maches.find(sub2, find_matches1_number2+4, end)
+                                                                find_matches1=str_find_tree_maches.find(sub2, find_matches1_number1+4, end)
                                                                 mathes=mathes+1
                                                                 find_matches1_number3=int(find_matches1)
                                                                 if find_matches1!="-1":
@@ -398,7 +229,7 @@ Continue
                                                                                     z=z+1
                                                                 sub_info2=add_bits8+sub1
                                                                 
-                                                                find_matches2=str_find_tree_maches.find(sub_info, find_matches1_number3+4, end)
+                                                                find_matches2=str_find_tree_maches.find(sub_info, find_matches1_number2+4, end)
                                                                 mathes=mathes+1
                                                                                 
                                                               
@@ -436,8 +267,4 @@ Continue
                                         sda6=sda6+"1"+sda7
                                         
                                     print(compress_no)
-                                    print(compress_yes)
-                                   
-                                    n = int(sda6, 2)
-                                
-[/C]
+                                    print(compress_yes                                  
