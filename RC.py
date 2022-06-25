@@ -494,7 +494,9 @@ class compression:
                                     c=c+2
 
                                 if cvf1==1:
-                                    times_compression=0   
+                                    times_compression=0  
+                                    compress_no=0
+                                    compress_yes=0   
                                     while  times_compression!=1000:
 
                                                 start=0
@@ -503,8 +505,7 @@ class compression:
                                                 sda4=""
                                                 sda6=""
                                                 sda7=""
-                                                compress_no=0
-                                                compress_yes=0
+                                                
             
                                                 block=0
                                                 Find=0
@@ -530,6 +531,8 @@ class compression:
                                                                                                 add_bits18="0"+add_bits18
                                                                                                 z=z+1
                                                                             sub_info="0000"
+                                                                            sub2="0000" 
+                                                                
                                                                             
                                                                             find_matches1=str_find_tree_maches.find(sub_info, start, end)
                                                                             mathes=mathes+1
@@ -538,7 +541,7 @@ class compression:
                                                                             if find_matches1!="-1":
                                                                                 
                                                                                 find_matches1_number1=int(find_matches1)
-                                                                                sub2="0000"
+                                                                                
                                                                                 
                                                                                 
                                                                                 
