@@ -495,7 +495,7 @@ class compression:
 
                                 if cvf1==1:
                                     times_compression=0   
-                                    while  times_compression!=100000:
+                                    while  times_compression!=1000:
 
                                                 start=0
                                                 end=64
