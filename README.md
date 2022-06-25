@@ -1,4 +1,5 @@
 # RC
+Algorithm RC:
 Random Compression 
 
 
