@@ -443,7 +443,7 @@ Find three matches 3 that "0000" matches change to two next three block 128 bits
                                                                                 if block_compression2==2:
                                                                                     block_compression2=3
                                             
-                                                                            sub_info3=str_find_tree_maches[find_matches1_number2+4:find_matches1_number2+7]
+                                                                            sub_info3=str_find_tree_maches[find_matches1_number3+4:find_matches1_number3+7]
                                                                             
                                                                             find_matches_1=str_find_tree_maches.find("000000", find_matches1_number1+4, end)
                                                                             if find_matches_1=="-1":  
