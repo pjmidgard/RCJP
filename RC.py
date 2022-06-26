@@ -588,8 +588,9 @@ class compression:
                                                                                 
                                                                                 sda4=str_find_tree_maches[:find_matches1_number3-4]+sub_info3+str_find_tree_maches[find_matches1_number3:]
                                                                                 sda5=sda5+sda4
-                                                                                block_compression=1
-                                                                                if block_compression==1:
+                                                                                if block_compression==0:
+                                                                                    block_compression=1
+                                                                                elif block_compression==1:
                                                                                     block_compression=2
                                                                         
                                                                                 sda7=str_find_tree_maches        
