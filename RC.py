@@ -547,8 +547,6 @@ class compression:
                                                                                     if block_compression2==1:
                                                                                         block_compression2=2
                                                     
-                                                                            
-                                                                            
                                                                             find_matches1=str_find_tree_maches.find(sub2, find_matches1_number1+4, end)
                                                                             
                                                                             find_matches1_number3=int(find_matches1)
@@ -556,12 +554,7 @@ class compression:
                                                                                 Find=1
                                                                                 if block_compression2==2:
                                                                                     block_compression2=3
-                                                
-                                                                        
-                                                                  
-                                                                        
-                                                                            
-
+                                            
                                                                             sub_info3=str_find_tree_maches[find_matches1_number2+4:find_matches1_number2+7]
                                                                             
                                                                             find_matches_1=str_find_tree_maches.find("000000", find_matches1_number1+4, end)
@@ -619,7 +612,6 @@ class compression:
                                                                                     sda7=""
                                                                                     block_compression2=0
                                                                                     
-                                                                            
                                                                                 block=block+128
                                                      
                                                 times_compression=times_compression+1      
