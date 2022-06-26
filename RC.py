@@ -499,6 +499,7 @@ class compression:
                                     compress_yes=0
                                     long2=len(sda3)
                                     times2=long2
+                                    sda9=""
                                     block_compression2=0
                                     
                                     start=-1
@@ -639,12 +640,13 @@ class compression:
                                                     sda5=""
                                                     sda7=""
                                                 sda3=sda6
+                                                sda9=sda6
                                                 sda6=""
                                                  
-                                    sda6="1"+sda3
+                                    sda9="1"+sda9
 
                                     
-                                    lenf=len(sda6)
+                                    lenf=len(sda9)
                                     
                                     add_bits118=""
                                     count_bits=8-lenf%8
@@ -656,7 +658,7 @@ class compression:
                                                 z=z+1
                                                                 
                                                                 
-                                    sda6=add_bits118+sda6
+                                    sda9=add_bits118+sda9
 
                                     sda8=bin(times2)[2:]
                                     lenf=len(sda8)
@@ -676,14 +678,14 @@ class compression:
                                                 z=z+1
                                                                 
                                                                 
-                                    sda6=add_bits118+sda8+sda6
+                                    sda9=add_bits118+sda8+sda9
                                     
                                     print(compress_no)
                                     print(compress_yes)
                                    
-                                    n = int(sda6, 2)
+                                    n = int(sda9, 2)
                                 
-                                    qqwslenf=len(sda6)
+                                    qqwslenf=len(sda9)
                                     qqwslenf=(qqwslenf/8)*2
                                     qqwslenf=str(qqwslenf)
                                     qqwslenf="%0"+qqwslenf+"x"
