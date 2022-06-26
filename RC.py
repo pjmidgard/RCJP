@@ -628,7 +628,7 @@ class compression:
                                                                                     block_compression2=1
                                                                                 
                                                                                 
-                                                                            find_matches1=str_find_tree_maches.find(sub2, start+4, end)
+                                                                            find_matches1=str_find_tree_maches.find(sub2, find_matches1_number1+4, end)
                                                                             
             
                                                                             if find_matches1!="-1":
@@ -637,7 +637,7 @@ class compression:
                                                                                     if block_compression2==1:
                                                                                         block_compression2=2
                                                     
-                                                                            find_matches1=str_find_tree_maches.find(sub2, find_matches1_number1+4, end)
+                                                                            find_matches1=str_find_tree_maches.find(sub2, find_matches1_number2+4, end)
                                                                             
                                                                             find_matches1_number3=int(find_matches1)
                                                                             if find_matches1!="-1":
@@ -647,29 +647,29 @@ class compression:
                                             
                                                                             sub_info3=str_find_tree_maches[find_matches1_number3+4:find_matches1_number3+7]
                                                                             
-                                                                            find_matches_1=str_find_tree_maches.find("000000", find_matches1_number1+4, end)
+                                                                            find_matches_1=str_find_tree_maches.find("000000", find_matches1_number2+4, end)
                                                                             if find_matches_1=="-1":  
                                                                                              Find=0  
-                                                                            find_matches_2=str_find_tree_maches.find("001001", find_matches1_number1+4, end)
+                                                                            find_matches_2=str_find_tree_maches.find("001001", find_matches1_number2+4, end)
                                                                             if find_matches_2=="-1":  
                                                                                              Find=0    
-                                                                            find_matches_3=str_find_tree_maches.find("010010", find_matches1_number1+4, end)
+                                                                            find_matches_3=str_find_tree_maches.find("010010", find_matches1_number2+4, end)
                                                                             if find_matches_3=="-1":  
                                                                                              Find=0   
 
-                                                                            find_matches_4=str_find_tree_maches.find("011011", find_matches1_number1+4, end)
+                                                                            find_matches_4=str_find_tree_maches.find("011011", find_matches1_number2+4, end)
                                                                             if find_matches_4=="-1":  
                                                                                              Find=0
-                                                                            find_matches_5=str_find_tree_maches.find("100100", find_matches1_number1+4, end)
+                                                                            find_matches_5=str_find_tree_maches.find("100100", find_matches1_number2+4, end)
                                                                             if find_matches_5=="-1":  
                                                                                              Find=0
-                                                                            find_matches_6=str_find_tree_maches.find("101101", find_matches1_number1+4, end)
+                                                                            find_matches_6=str_find_tree_maches.find("101101", find_matches1_number2+4, end)
                                                                             if find_matches_6=="-1":  
                                                                                              Find=0
-                                                                            find_matches_7=str_find_tree_maches.find("110110", find_matches1_number1+4, end)
+                                                                            find_matches_7=str_find_tree_maches.find("110110", find_matches1_number2+4, end)
                                                                             if find_matches_7=="-1":  
                                                                                              Find=0  
-                                                                            find_matches_8=str_find_tree_maches.find("111111", find_matches1_number1+4, end)
+                                                                            find_matches_8=str_find_tree_maches.find("111111", find_matches1_number2+4, end)
                                                                             if find_matches_8=="-1":  
                                                                                              Find=0        
                                                                                                                        
