@@ -433,6 +433,7 @@ Find three matches 3 that "0000" matches change to two next three block 128 bits
                                                     sda6=sda6+"1"+sda7
                                                     sda5=""
                                                     sda7=""
+						    block_compression2=0
                                                 sda3=sda6
                                                 sda9=sda6
                                                 sda6=""
