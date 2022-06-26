@@ -257,7 +257,8 @@ class compression:
                                                                                 find_matches1_number1=int(find_matches1)
                                                                                 if block_compression2==0:
                                                                                     block_compression2=1
-                                                                                
+                                                                                if block_compression2==3:
+                                                                                    block_compression2=4                                                                               
                                                                                 
                                                                             find_matches1=str_find_tree_maches.find(sub2, find_matches1_number1+4, end)
                                                                             
@@ -267,7 +268,8 @@ class compression:
                                                                                     find_matches1_number2=int(find_matches1)
                                                                                     if block_compression2==1:
                                                                                         block_compression2=2
-                                                    
+                                                                                    if block_compression2==4:
+                                                                                        block_compression2=5                                                  
                                                                             find_matches1=str_find_tree_maches.find(sub2, find_matches1_number2+4, end)
                                                                             
                                                                             find_matches1_number3=int(find_matches1)
@@ -275,7 +277,8 @@ class compression:
                                                                                 Find=1
                                                                                 if block_compression2==2:
                                                                                     block_compression2=3
-                                            
+                                                                                if block_compression2==5:
+                                                                                    block_compression2=6                                          
                                                                             sub_info3=str_find_tree_maches[find_matches1_number3+4:find_matches1_number3+7]
                                                                             
                                                                             find_matches_1=str_find_tree_maches.find("000000", find_matches1_number2+4, end)
@@ -311,12 +314,12 @@ class compression:
                                                                                 sda5=sda5+sda4
                                                                                 if block_compression==0 and block_compression2==3:
                                                                                     block_compression=1
-                                                                                elif block_compression==1 and block_compression2==3:
+                                                                                elif block_compression==1 and block_compression2==6:
                                                                                     block_compression=2
                                                                         
                                                                                 sda7=str_find_tree_maches        
                                                                                 block_compression1=block_compression1+1 
-                                                                                if block_compression==block_compression1 and block_compression1==2 and block_compression2==3:
+                                                                                if block_compression==block_compression1 and block_compression1==2 and block_compression2==6:
                                                                                     compress_yes=compress_yes+1
                                                                                     block_compression=0
                                                                                     block_compression1=0
@@ -325,7 +328,7 @@ class compression:
                                                                                     sda7=""
                                                                                     block_compression2=0
                                         
-                                                                                if block_compression!=block_compression1 and block_compression1==2 and block_compression2!=3:
+                                                                                if block_compression!=block_compression1 and block_compression1==2 and block_compression2!=6:
                                                                                     compress_no=compress_no+1
                                                                                     block_compression=0
                                                                                     block_compression1=0
@@ -337,7 +340,7 @@ class compression:
                                                                                 block=block+128
                                                      
                                                 times_compression=times_compression+1      
-                                                if block_compression==block_compression1 and block_compression1==1 and block_compression2==3:
+                                                if block_compression==block_compression1 and block_compression1==1 and block_compression2==6:
                                                     compress_no=compress_no+1
                                                     block_compression=0
                                                     block_compression1=0
@@ -346,7 +349,7 @@ class compression:
                                                     sda7=""
                                                     block_compression2=0
                                         
-                                                if block_compression!=block_compression1 and block_compression1==1 and block_compression2!=3:
+                                                if block_compression!=block_compression1 and block_compression1==1 and block_compression2!=6:
                                                     compress_no=compress_no+1
                                                     block_compression=0
                                                     block_compression1=0
