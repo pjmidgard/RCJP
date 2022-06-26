@@ -498,13 +498,13 @@ class compression:
                                     compress_no=0
                                     compress_yes=0
                                     long2=len(sda3)
-                                    times2=long2//255
+                                    times2=100
                                     
                                     start=-1
                                     while  times_compression!=times2:
 
-                                                start=start+1
-                                                end=64
+                                                start=0
+                                                end=128
                                                 sda5=""
                                                 sda4=""
                                                 sda6=""
@@ -517,23 +517,13 @@ class compression:
                                                 block_compression=0
                                                 long=len(sda3)
                                                 while block<long:
-                                                    str_find_tree_maches=sda3[block:block+128+start]
+                                                    str_find_tree_maches=sda3[block:block+128]
                                                     
                                                     mathes=0
                                                     while mathes!=15:
                                                         
                                                         
-                                                                            sub1=bin(mathes)[2:]
-                                                                            lenf=len(sub1)
-            
-                                                                            add_bits18=""
-                                                                            count_bits=4-lenf%4
-                                                                            z=0
-                                                                            if count_bits!=0:
-                                                                                if count_bits!=4:
-                                                                                        while z<count_bits:
-                                                                                                add_bits18="0"+add_bits18
-                                                                                                z=z+1
+                                                                            
                                                                             sub_info="0000"
                                                                             sub2="0000" 
                                                                 
@@ -574,18 +564,7 @@ class compression:
                                                                                     find_matches1_number2=int(find_matches1)
                                                     mathes=0
                                                     while mathes!=15:
-                                                                            sub1=bin(mathes)[2:]
-                                                                            lenf=len(sub1)
-            
-                                                                            add_bits2=""
-                                                                            count_bits=4-lenf%4
-                                                                            z=0
-                                                                            if count_bits!=0:
-                                                                                if count_bits!=4:
-                                                                                        while z<count_bits:
-                                                                                                add_bits2="0"+add_bits2
-                                                                                                z=z+1
-                                                                            sub_info=add_bits2+sub1
+                                                                            
                                                                             
                                                                             find_matches1=str_find_tree_maches.find(sub2, find_matches1_number1+4, end)
                                                                             mathes=mathes+1
@@ -597,27 +576,50 @@ class compression:
                                                                         
                                                                   
                                                                         
-                                                                            sub1=bin(mathes)[2:]
-                                                                            lenf=len(sub1)
-            
-                                                                            add_bits8=""
-                                                                            count_bits=3-lenf%3
-                                                                            z=0
-                                                                            if count_bits!=0:
-                                                                                if count_bits!=3:
-                                                                                        while z<count_bits:
-                                                                                                add_bits8="0"+add_bits8
-                                                                                                z=z+1
-                                                                            sub_info2=add_bits8+sub1
                                                                             
-                                                                            find_matches2=str_find_tree_maches.find(sub_info, find_matches1_number2+4, end)
+
+                                                                            sub_info3=str_find_tree_maches[find_matches1_number2+4:find_matches1_number2+7]
+                                                                            
+                                                                            find_matches_1=str_find_tree_maches.find("000000", find_matches1_number1+4, end)
+                                                                            if find_matches_1=="-1":  
+                                                                                             Find=0  
+                                                                            find_matches_2=str_find_tree_maches.find("001001", find_matches1_number1+4, end)
+                                                                            if find_matches_2=="-1":  
+                                                                                             Find=0    
+                                                                            find_matches_3=str_find_tree_maches.find("010010", find_matches1_number1+4, end)
+                                                                            if find_matches_3=="-1":  
+                                                                                             Find=0   
+
+                                                                            find_matches_4=str_find_tree_maches.find("011011", find_matches1_number1+4, end)
+                                                                            if find_matches_4=="-1":  
+                                                                                             Find=0
+                                                                            find_matches_5=str_find_tree_maches.find("100100", find_matches1_number1+4, end)
+                                                                            if find_matches_5=="-1":  
+                                                                                             Find=0
+                                                                            find_matches_6=str_find_tree_maches.find("101101", find_matches1_number1+4, end)
+                                                                            if find_matches_6=="-1":  
+                                                                                             Find=0
+                                                                            find_matches_7=str_find_tree_maches.find("110110", find_matches1_number1+4, end)
+                                                                            if find_matches_7=="-1":  
+                                                                                             Find=0  
+                                                                            find_matches_8=str_find_tree_maches.find("111111", find_matches1_number1+4, end)
+                                                                            if find_matches_8=="-1":  
+                                                                                             Find=0        
+                                                                                              
+                                                                                                                                                                                        
+                                                                                             
+                                                                                                
+                                                                                             
+
+                                                                                           
+                                                                                                                                           
                                                                             mathes=mathes+1
                                                                                             
                                                                           
-                                                                            if find_matches2!="-1" and Find==1:
+                                                                            if Find==1:
                                                                                 Find=0
-                                                                                find_matches1_number3=int(find_matches2)
-                                                                                sda4=str_find_tree_maches[:find_matches1_number2-4]+sub_info2+str_find_tree_maches[find_matches1_number2:]
+                                                                                
+                                                                                sda4=str_find_tree_maches[:find_matches1_number3-4]+sub_info3+str_find_tree_maches[find_matches1_number3:]
                                                                                 sda5=sda5+sda4
                                                                                 block_compression=1
                                                                                 if block_compression==1:
@@ -642,11 +644,11 @@ class compression:
                                                         sda7=""
                                                         
                                                 
-                                                    block=block+start+128
+                                                    block=block+128
                                                      
                                                 times_compression=times_compression+1      
                                                 if block_compression!=block_compression1 and block_compression1==1:
-                                                    sda6=sda6+sda7
+                                                sda6=sda6+sda7
                                                     
                                                 sda3=sda6
                                                 sda6=""
