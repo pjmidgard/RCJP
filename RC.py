@@ -685,12 +685,6 @@ class compression:
                              
                                     jl=binascii.unhexlify(qqwslenf % n)
                                 
-                                  
-                                
-                                    
-                                    
-                                    
-                                    
                                     qqqwz=qqqwz+1
                                     szxzzza=""
                                     szxzs=""
