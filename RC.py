@@ -228,7 +228,7 @@ class compression:
 
                                                 start=0
                                                 end=128
-                                                sda5=""
+                                                fda5=""
                                                 sda4=""
                                                 sda6=""
                                                 sda7=""
@@ -249,10 +249,11 @@ class compression:
                                                                 
                                                                             
                                                                             find_matches1=str_find_tree_maches.find(sub_info, start, end)
+                                                                            find_matches1_1=int(find_matches1)
                                                                             
                                                                                             
                                                     
-                                                                            if find_matches1!="-1":
+                                                                            if find_matches1_1!=-1:
                                                                                 
                                                                                 find_matches1_number1=int(find_matches1)
                                                                                 if block_compression2==0:
@@ -261,9 +262,11 @@ class compression:
                                                                                     block_compression2=4                                                                               
                                                                                 
                                                                             find_matches1=str_find_tree_maches.find(sub2, find_matches1_number1+4, end)
+                                                                            find_matches1_2=int(find_matches1)
+                                                                            
                                                                             
             
-                                                                            if find_matches1!="-1":
+                                                                            if find_matches1_2!=-1:
                                                                                     
                                                                                     find_matches1_number2=int(find_matches1)
                                                                                     if block_compression2==1:
@@ -273,7 +276,7 @@ class compression:
                                                                             find_matches1=str_find_tree_maches.find(sub2, find_matches1_number2+4, end)
                                                                             
                                                                             find_matches1_number3=int(find_matches1)
-                                                                            if find_matches1!="-1":
+                                                                            if find_matches1_number3!=-1:
                                                                                 Find=1
                                                                                 if block_compression2==2:
                                                                                     block_compression2=3
@@ -281,30 +284,30 @@ class compression:
                                                                                     block_compression2=6                                          
                                                                             sub_info3=str_find_tree_maches[find_matches1_number3+4:find_matches1_number3+7]
                                                                             
-                                                                            find_matches_1=str_find_tree_maches.find("000000", find_matches1_number2+4, end)
-                                                                            if find_matches_1=="-1":  
+                                                                            find_matches_1=int(str_find_tree_maches.find("000000", find_matches1_number2+4, end))
+                                                                            if find_matches_1==-1:  
                                                                                              Find=0  
-                                                                            find_matches_2=str_find_tree_maches.find("001001", find_matches1_number2+4, end)
-                                                                            if find_matches_2=="-1":  
+                                                                            find_matches_2=int(str_find_tree_maches.find("001001", find_matches1_number2+4, end))
+                                                                            if find_matches_2==-1:  
                                                                                              Find=0    
-                                                                            find_matches_3=str_find_tree_maches.find("010010", find_matches1_number2+4, end)
-                                                                            if find_matches_3=="-1":  
+                                                                            find_matches_3=int(str_find_tree_maches.find("010010", find_matches1_number2+4, end))
+                                                                            if find_matches_3==-1:  
                                                                                              Find=0   
 
-                                                                            find_matches_4=str_find_tree_maches.find("011011", find_matches1_number2+4, end)
-                                                                            if find_matches_4=="-1":  
+                                                                            find_matches_4=int(str_find_tree_maches.find("011011", find_matches1_number2+4, end))
+                                                                            if find_matches_4==-1:  
                                                                                              Find=0
-                                                                            find_matches_5=str_find_tree_maches.find("100100", find_matches1_number2+4, end)
-                                                                            if find_matches_5=="-1":  
+                                                                            find_matches_5=int(str_find_tree_maches.find("100100", find_matches1_number2+4, end))
+                                                                            if find_matches_5==-1:  
                                                                                              Find=0
-                                                                            find_matches_6=str_find_tree_maches.find("101101", find_matches1_number2+4, end)
-                                                                            if find_matches_6=="-1":  
+                                                                            find_matches_6=int(str_find_tree_maches.find("101101", find_matches1_number2+4, end))
+                                                                            if find_matches_6==-1:  
                                                                                              Find=0
-                                                                            find_matches_7=str_find_tree_maches.find("110110", find_matches1_number2+4, end)
-                                                                            if find_matches_7=="-1":  
+                                                                            find_matches_7=int(str_find_tree_maches.find("110110", find_matches1_number2+4, end))
+                                                                            if find_matches_7==-1:  
                                                                                              Find=0  
-                                                                            find_matches_8=str_find_tree_maches.find("111111", find_matches1_number2+4, end)
-                                                                            if find_matches_8=="-1":  
+                                                                            find_matches_8=int(str_find_tree_maches.find("111111", find_matches1_number2+4, end))
+                                                                            if find_matches_8==-1:  
                                                                                              Find=0        
                                                                                                                        
                                                                             if Find==1:
