@@ -63,7 +63,7 @@ wer=""
 qtqweqw=""
 numberschangenotexist = []
 numbers = []
-namez = input("for Spring binary code c or Binary code u? ")
+namez = input("for compress c or extract e? ")
 #@Author Jurijus pacalovas
 class compression:
 
@@ -498,7 +498,8 @@ class compression:
                                     compress_no=0
                                     compress_yes=0
                                     long2=len(sda3)
-                                    times2=100
+                                    times2=long2
+                                    block_compression2=0
                                     
                                     start=-1
                                     while  times_compression!=times2:
@@ -515,64 +516,46 @@ class compression:
                                                 Find=0
                                                 block_compression1=0
                                                 block_compression=0
+                                                block_compression2=0
                                                 long=len(sda3)
+                                                
                                                 while block<long:
-                                                    str_find_tree_maches=sda3[block:block+128]
+                                                                            str_find_tree_maches=sda3[block:block+128]
                                                     
-                                                    mathes=0
-                                                    while mathes!=15:
-                                                        
-                                                        
-                                                                            
                                                                             sub_info="0000"
                                                                             sub2="0000" 
                                                                 
                                                                             
                                                                             find_matches1=str_find_tree_maches.find(sub_info, start, end)
-                                                                            mathes=mathes+1
+                                                                            
                                                                                             
                                                     
                                                                             if find_matches1!="-1":
                                                                                 
                                                                                 find_matches1_number1=int(find_matches1)
+                                                                                if block_compression2==0:
+                                                                                    block_compression2=1
                                                                                 
                                                                                 
-                                                                                
-                                                                                
-                                                                                
-                                                    mathes=0
-                                                    while mathes!=15:
-                                                            
-                                                            
-                                                                            sub1=bin(mathes)[2:]
-                                                                            lenf=len(sub1)
-            
-                                                                            add_bits1=""
-                                                                            count_bits=4-lenf%4
-                                                                            z=0
-                                                                            if count_bits!=0:
-                                                                                if count_bits!=4:
-                                                                                        while z<count_bits:
-                                                                                                add_bits1="0"+add_bits1
-                                                                                                z=z+1
-                                                                            sub_info=add_bits1+sub1
-                                                                            
                                                                             find_matches1=str_find_tree_maches.find(sub2, start+4, end)
-                                                                            mathes=mathes+1
+                                                                            
             
                                                                             if find_matches1!="-1":
+                                                                                    
                                                                                     find_matches1_number2=int(find_matches1)
-                                                    mathes=0
-                                                    while mathes!=15:
+                                                                                    if block_compression2==1:
+                                                                                        block_compression2=2
+                                                    
                                                                             
                                                                             
                                                                             find_matches1=str_find_tree_maches.find(sub2, find_matches1_number1+4, end)
-                                                                            mathes=mathes+1
+                                                                            
                                                                             find_matches1_number3=int(find_matches1)
                                                                             if find_matches1!="-1":
                                                                                 Find=1
-                                                    mathes=0
-                                                    while mathes!=7:
+                                                                                if block_compression2==2:
+                                                                                    block_compression2=3
+                                                
                                                                         
                                                                   
                                                                         
@@ -605,17 +588,7 @@ class compression:
                                                                             find_matches_8=str_find_tree_maches.find("111111", find_matches1_number1+4, end)
                                                                             if find_matches_8=="-1":  
                                                                                              Find=0        
-                                                                                              
-                                                                                                                                                                                        
-                                                                                             
-                                                                                                
-                                                                                             
-
-                                                                                           
-                                                                                                                                           
-                                                                            mathes=mathes+1
-                                                                                            
-                                                                          
+                                                                                                                       
                                                                             if Find==1:
                                                                                 Find=0
                                                                                 
@@ -625,50 +598,86 @@ class compression:
                                                                                 if block_compression==1:
                                                                                     block_compression=2
                                                                         
-                                                    sda7=str_find_tree_maches        
-                                                    block_compression1=block_compression1+1 
-                                                    if block_compression==block_compression1 and block_compression1==2:
-                                                        compress_yes=compress_yes+1
-                                                        block_compression=0
-                                                        block_compression1=0
-                                                        sda6=sda6+"0"+sda5
-                                                        sda5=""
-                                                        sda7=""
-            
-                                                    if block_compression!=block_compression1 and block_compression1==2:
-                                                        compress_no=compress_no+1
-                                                        block_compression=0
-                                                        block_compression1=0
-                                                        sda6=sda6+"1"+sda7
-                                                        sda5=""
-                                                        sda7=""
-                                                        
-                                                
-                                                    block=block+128
+                                                                                sda7=str_find_tree_maches        
+                                                                                block_compression1=block_compression1+1 
+                                                                                if block_compression==block_compression1 and block_compression1==2 and block_compression2==3:
+                                                                                    compress_yes=compress_yes+1
+                                                                                    block_compression=0
+                                                                                    block_compression1=0
+                                                                                    sda6=sda6+"0"+sda5
+                                                                                    sda5=""
+                                                                                    sda7=""
+                                                                                    block_compression2=0
+                                        
+                                                                                if block_compression!=block_compression1 and block_compression1==2 and block_compression2!=3:
+                                                                                    compress_no=compress_no+1
+                                                                                    block_compression=0
+                                                                                    block_compression1=0
+                                                                                    sda6=sda6+"1"+sda7
+                                                                                    sda5=""
+                                                                                    sda7=""
+                                                                                    block_compression2=0
+                                                                                    
+                                                                            
+                                                                                block=block+128
                                                      
                                                 times_compression=times_compression+1      
-                                                if block_compression!=block_compression1 and block_compression1==1:
-                                                sda6=sda6+sda7
-                                                    
+                                                if block_compression==block_compression1 and block_compression1==1 and block_compression2==3:
+                                                    compress_no=compress_no+1
+                                                    block_compression=0
+                                                    block_compression1=0
+                                                    sda6=sda6+"1"+sda7
+                                                    sda5=""
+                                                    sda7=""
+                                                    block_compression2=0
+                                        
+                                                if block_compression!=block_compression1 and block_compression1==1 and block_compression2!=3:
+                                                    compress_no=compress_no+1
+                                                    block_compression=0
+                                                    block_compression1=0
+                                                    sda6=sda6+"1"+sda7
+                                                    sda5=""
+                                                    sda7=""
                                                 sda3=sda6
                                                 sda6=""
                                                  
                                     sda6="1"+sda3
-                                    lenf=len(sda6)
-                                        
-                                                  
 
+                                    
+                                    lenf=len(sda6)
+                                    
                                     add_bits118=""
                                     count_bits=8-lenf%8
                                     z=0
                                     if count_bits!=0:
                                         if count_bits!=8:
                                             while z<count_bits:
-                                                                                    add_bits118="0"+add_bits118
-                                                                                    z=z+1
+                                                add_bits118="0"+add_bits118
+                                                z=z+1
                                                                 
                                                                 
                                     sda6=add_bits118+sda6
+
+                                    sda8=bin(times2)[2:]
+                                    lenf=len(sda8)
+                                    if lenf>40:
+                                        print("size file is too big")
+                                        x3=0.0
+                                        return print(x3)
+                                        
+                                    
+                                    add_bits118=""
+                                    count_bits=40-lenf%40
+                                    z=0
+                                    if count_bits!=0:
+                                        if count_bits!=40:
+                                            while z<count_bits:
+                                                add_bits118="0"+add_bits118
+                                                z=z+1
+                                                                
+                                                                
+                                    sda6=add_bits118+sda8+sda6
+                                    
                                     print(compress_no)
                                     print(compress_yes)
                                    
@@ -702,7 +711,7 @@ class compression:
                                             return print(x3)
 
     def cryptograpy_unpack(self):                      
-                 if namez=="u":
+                 if namez=="e":
                     corridors=0
                     cor=7
                     name = input("What is name of file? ")
