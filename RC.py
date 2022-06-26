@@ -632,6 +632,7 @@ class compression:
                                                     sda6=sda6+"1"+sda7
                                                     sda5=""
                                                     sda7=""
+                                                    block_compression2=0
                                                 sda3=sda6
                                                 sda9=sda6
                                                 sda6=""
