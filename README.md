@@ -1,11 +1,9 @@
 # RC
+
 Algorithm RC:
+
 Random Compression
 
-
-
-
-Algorithm RC: Random Compression
 Algorithm RC:
 Spring-109 Reverso:
 
