@@ -9,7 +9,7 @@ Reverso Spring-binary-code-108
 Find three matches 3 that "0000" matches change to two next three block 128 bits
 
 
-                                                e4=sda2[e2:e3]
+                                e4=sda2[e2:e3]
                                 
                                 block=block+1 
                                 
