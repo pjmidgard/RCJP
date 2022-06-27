@@ -305,7 +305,7 @@ class compression:
                                                                                 Find=0  
             
                                                                             if find_matches1_2!=-1:
-                                                                                    Find=1
+                                                                                   
                                                                                     
                                                                                     find_matches1_number2=int(find_matches1)
                                                                                     if block_compression2==1:
