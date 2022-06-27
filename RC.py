@@ -75,6 +75,27 @@ class compression:
                     corridors=0
                     cor=7
                     name = input("What is name of file? ")
+                    Deep = str(input("Please, enter Deep? "))
+
+                    x = Deep.isnumeric()
+                    if x==False:
+                                print("Sorry this not whole number")
+                                raise SystemExit
+                        
+                    if x==True:
+                        Deep=int(Deep)
+                        Deep6=65535-100
+
+                        if Deep>Deep6:
+                            Deep=Deep6
+
+                        if Deep<1:
+                                Deep=100
+                                                
+                        Deep=Deep+100
+                        
+                        print(Deep-100)
+                        
                     namea="file.W"
                     namem=""
                     namema="?"
@@ -231,7 +252,7 @@ class compression:
                                     compress_no=0
                                     compress_yes=0
                                     long2=len(sda3)
-                                    times2=long2//255
+                                    times2=Deep
                                 
                                     
                                     
@@ -396,9 +417,9 @@ class compression:
                                     long_after=len(sda3)
                                     print(long_after)
                                     print(long_file)
-                                    if long_file<=long_after:
+                                    if long_file<=long_after or long_after<=8192:
                                         sda9="0"+sda10
-                                    if long_file>long_after:
+                                    elif long_file>long_after:
                                         sda9="1"+sda3   
                                     sda9="1"+sda9
 
@@ -472,6 +493,7 @@ class compression:
                     namea="file.W"
                     namem=""
                     namema="?"
+                    Deep=0
                  
                     assxw=0
                     blockw=5
