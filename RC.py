@@ -376,7 +376,7 @@ class compression:
                                                                                 block_compression2=0
                                                                                 Find=1
                                         
-                                                                            elif block_compression!=block_compression1 and block_compression1==2 and block_compression2!=6:
+                                                                            elif block_compression!=block_compression1 and block_compression1==2 and block_compression2!=6 or block_compression2==6 and Find==0 or block_compression2!=6 and Find==0:
                                                                                 compress_no=compress_no+1
                                                                                 #print(compress_no)
                                                                             
@@ -408,7 +408,8 @@ class compression:
                                                     block_compression2=0
                                                     Find=1
                                         
-                                                elif block_compression!=block_compression1 and block_compression1==1 and block_compression2!=6:
+                                                elif block_compression!=block_compression1 and block_compression1==1 and block_compression2!=6 or block_compression2==6 and Find==0 or block_compression2!=6 and Find==0:
+                                                                                
                                                     compress_no=compress_no+1
                                                     block_compression=0
                                                     block_compression1=0
