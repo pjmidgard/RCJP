@@ -444,7 +444,7 @@ class compression:
                                         sda9="0"+sda10
                                     elif long_file>long_after:
                                         sda9="1"+sda3   
-                                    sda9="1"+sda9
+                                    sda9="1"+b+sda9
 
                                     
                                     lenf=len(sda9)
