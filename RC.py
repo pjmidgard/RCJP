@@ -242,6 +242,7 @@ class compression:
                                 sda7=""
                                 sda12=""
                                 sda10=sda3
+                                predict=-1
                                 
                                 
 
@@ -267,9 +268,19 @@ class compression:
                                                 
                                                 find_matches1_number1=0
                                                 find_matches1_number2=0
-                                                find_matches1_number3=0                                                
+                                                find_matches1_number3=0   
+                                                
+                                                predict=predict+1
+                                                if predict==16:
+                                                    predict=0
+                                                
+                                                
+                                                                                             
+                                                                                                                                    
             
                                                 block=0
+                                                b=format(predict,'04b')
+                                                
                                                 Find=1
                                                 block_compression1=0
                                                 block_compression=0
@@ -280,8 +291,8 @@ class compression:
                                                 while block<long:
                                                                             str_find_tree_maches=sda3[block:block+blocks]
                                                     
-                                                                            sub_info="0000"
-                                                                            sub2="0000" 
+                                                                            sub_info=b
+                                                                            sub2=b
                                                                 
                                                                             
                                                                             find_matches1=str_find_tree_maches.find(sub_info, start, end)
