@@ -84,7 +84,7 @@ class compression:
                         
                     if x==True:
                         Deep=int(Deep)
-                        Deep6=65535-100
+                        Deep6=1000-100
 
                         if Deep>Deep6:
                             Deep=Deep6
@@ -429,7 +429,7 @@ class compression:
                                     print("Long after")
                                     print(long_file)
                                     print("Long before")
-                                    if long_file<=long_after or long_after<=8192:
+                                    if long_file<=long_after:
                                         sda9="0"+sda10
                                     elif long_file>long_after:
                                         sda9="1"+sda3   
