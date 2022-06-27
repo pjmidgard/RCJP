@@ -430,7 +430,7 @@ class compression:
                                                     sda12=""
                                                     Find=1
                                                     block_compression2=0
-                                                sda3=sda6
+                                                sda3=b+sda6
                                                 
                                                 #print(len(sda6))
                                                 sda6=""
@@ -444,7 +444,7 @@ class compression:
                                         sda9="0"+sda10
                                     elif long_file>long_after:
                                         sda9="1"+sda3   
-                                    sda9="1"+b+sda9
+                                    sda9="1"+sda9
 
                                     
                                     lenf=len(sda9)
