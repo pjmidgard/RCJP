@@ -352,7 +352,7 @@ class compression:
                                                                                              Find=0        
                                                                                                                        
                                                                             if block_compression2==3 and Find!=0 or block_compression2==6 and Find!=0:
-                                                                                Find=2
+                                                                                
                                                                                 
                                                                                 sda4=str_find_tree_maches[:find_matches1_number3-4]+sub_info3+str_find_tree_maches[find_matches1_number3:]
                                                                                 sda5=sda5+sda4
