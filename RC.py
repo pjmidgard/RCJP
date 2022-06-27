@@ -211,6 +211,18 @@ class compression:
                                 lenf2=len(sda2)  
                                 
                                 sda3=sda2
+                                long_file=len(sda3)
+                                sda10=""
+                                sda9=""
+                                sda5=""
+                                fda5=""
+                                sda4=""
+                                sda6=""
+                                sda7=""
+                                sda12=""
+                                sda10=sda3
+                                
+                                
 
                                 cvf1=1
   
@@ -219,20 +231,22 @@ class compression:
                                     compress_no=0
                                     compress_yes=0
                                     long2=len(sda3)
-                                    times2=long2
-                                    sda9=""
+                                    times2=long2//255
+                                
+                                    
+                                    
                                     block_compression2=0
                                     
                                     start=-1
                                     while  times_compression!=times2:
 
                                                 start=0
-                                                end=128
-                                                fda5=""
-                                                sda4=""
-                                                sda6=""
-                                                sda7=""
+                                                blocks=1024
+                                                end=blocks
                                                 
+                                                find_matches1_number1=0
+                                                find_matches1_number2=0
+                                                find_matches1_number3=0                                                
             
                                                 block=0
                                                 Find=0
@@ -240,9 +254,10 @@ class compression:
                                                 block_compression=0
                                                 block_compression2=0
                                                 long=len(sda3)
+                                                #print(long)
                                                 
                                                 while block<long:
-                                                                            str_find_tree_maches=sda3[block:block+128]
+                                                                            str_find_tree_maches=sda3[block:block+blocks]
                                                     
                                                                             sub_info="0000"
                                                                             sub2="0000" 
@@ -251,8 +266,6 @@ class compression:
                                                                             find_matches1=str_find_tree_maches.find(sub_info, start, end)
                                                                             find_matches1_1=int(find_matches1)
                                                                             
-                                                                                            
-                                                    
                                                                             if find_matches1_1!=-1:
                                                                                 
                                                                                 find_matches1_number1=int(find_matches1)
@@ -267,6 +280,7 @@ class compression:
                                                                             
             
                                                                             if find_matches1_2!=-1:
+                                                                                
                                                                                     
                                                                                     find_matches1_number2=int(find_matches1)
                                                                                     if block_compression2==1:
@@ -276,6 +290,7 @@ class compression:
                                                                             find_matches1=str_find_tree_maches.find(sub2, find_matches1_number2+4, end)
                                                                             
                                                                             find_matches1_number3=int(find_matches1)
+                  
                                                                             if find_matches1_number3!=-1:
                                                                                 Find=1
                                                                                 if block_compression2==2:
@@ -311,7 +326,7 @@ class compression:
                                                                                              Find=0        
                                                                                                                        
                                                                             if Find==1:
-                                                                                Find=0
+                                                                                Find=2
                                                                                 
                                                                                 sda4=str_find_tree_maches[:find_matches1_number3-4]+sub_info3+str_find_tree_maches[find_matches1_number3:]
                                                                                 sda5=sda5+sda4
@@ -320,30 +335,42 @@ class compression:
                                                                                 elif block_compression==1 and block_compression2==6:
                                                                                     block_compression=2
                                                                         
-                                                                                sda7=str_find_tree_maches        
-                                                                                block_compression1=block_compression1+1 
-                                                                                if block_compression==block_compression1 and block_compression1==2 and block_compression2==6:
-                                                                                    compress_yes=compress_yes+1
-                                                                                    block_compression=0
-                                                                                    block_compression1=0
-                                                                                    sda6=sda6+"0"+sda5
-                                                                                    sda5=""
-                                                                                    sda7=""
-                                                                                    block_compression2=0
+                                                                            sda7=str_find_tree_maches
+                                                                            sda12=sda12+sda7
+                                                                            block_compression1=block_compression1+1 
+                                                                            if block_compression==block_compression1 and block_compression1==2 and block_compression2==6 and Find==2:
+                                                                                compress_yes=compress_yes+1
+                                                                                #print(compress_yes)
+                                                                                block_compression=0
+                                                                                block_compression1=0
+                                                                                sda6=sda6+"0"+sda5
+                                                                                sda5=""
+                                                                                sda7=""
+                                                                                sda12=""
+                                                                                block_compression2=0
                                         
-                                                                                if block_compression!=block_compression1 and block_compression1==2 and block_compression2!=6:
-                                                                                    compress_no=compress_no+1
-                                                                                    block_compression=0
-                                                                                    block_compression1=0
-                                                                                    sda6=sda6+"1"+sda7
-                                                                                    sda5=""
-                                                                                    sda7=""
-                                                                                    block_compression2=0
+                                                                            elif block_compression!=block_compression1 and block_compression1==2 and block_compression2!=6 and Find!=2:
+                                                                                compress_no=compress_no+1
+                                                                                #print(compress_no)
+                                                                            
+                                                                                block_compression=0
+                                                                                block_compression1=0
+                                                                                sda6=sda6+"1"+sda12
+                                                                                sda5=""
+                                                                                sda7=""
+                                                                                sda12=""
+                                                                                block_compression2=0
                                                                                     
-                                                                                block=block+128
+                                                                            block=block+blocks
+                                                                            #print(block)
                                                      
-                                                times_compression=times_compression+1      
-                                                if block_compression==block_compression1 and block_compression1==1 and block_compression2==6:
+                                                times_compression=times_compression+1
+                                                #print(times_compression)
+                                                
+                                                
+                                                     
+                                                    
+                                                if block_compression==block_compression1 and block_compression1==1 and block_compression2==6 and Find==2:
                                                     compress_no=compress_no+1
                                                     block_compression=0
                                                     block_compression1=0
@@ -352,18 +379,27 @@ class compression:
                                                     sda7=""
                                                     block_compression2=0
                                         
-                                                if block_compression!=block_compression1 and block_compression1==1 and block_compression2!=6:
+                                                elif block_compression!=block_compression1 and block_compression1==1 and block_compression2!=6 and Find!=2:
                                                     compress_no=compress_no+1
                                                     block_compression=0
                                                     block_compression1=0
                                                     sda6=sda6+"1"+sda7
                                                     sda5=""
                                                     sda7=""
+                                                    sda12=""
                                                     block_compression2=0
                                                 sda3=sda6
-                                                sda9=sda6
+                                                
+                                                #print(len(sda6))
                                                 sda6=""
-                                                 
+                                                
+                                    long_after=len(sda3)
+                                    print(long_after)
+                                    print(long_file)
+                                    if long_file<=long_after:
+                                        sda9="0"+sda10
+                                    if long_file>long_after:
+                                        sda9="1"+sda3   
                                     sda9="1"+sda9
 
                                     
