@@ -430,7 +430,7 @@ class compression:
                                                     sda12=""
                                                     Find=1
                                                     block_compression2=0
-                                                sda3=b+sda6
+                                                sda3=sda6
                                                 
                                                 #print(len(sda6))
                                                 sda6=""
