@@ -234,7 +234,6 @@ class compression:
                                     compress_no=0
                                     compress_yes=0
                                     long2=len(sda3)
-                                    long=long2
                                     times2=Deep
                                 
                                     
@@ -242,7 +241,7 @@ class compression:
                                     block_compression2=0
                                     
                                     start=-1
-                                    while  long>=800*8:
+                                    while  times_compression!=times2:
 
                                                 start=0
                                                 blocks=1024
@@ -443,25 +442,7 @@ class compression:
                                                                 
                                     sda9=add_bits118+sda9
 
-                                    sda8=bin(times_compression)[2:]
-                                    lenf=len(sda8)
-                                    if lenf>40:
-                                        print("size file is too big")
-                                        x3=0.0
-                                        return print(x3)
-                                        
-                                    
-                                    add_bits118=""
-                                    count_bits=40-lenf%40
-                                    z=0
-                                    if count_bits!=0:
-                                        if count_bits!=40:
-                                            while z<count_bits:
-                                                add_bits118="0"+add_bits118
-                                                z=z+1
-                                                                
-                                                                
-                                    sda9=add_bits118+sda8+sda9
+
                                     
                                     print(compress_no)
                                     print("Not compress blocks")
