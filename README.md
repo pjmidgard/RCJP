@@ -5,7 +5,7 @@ Random Compression
 Algorithm RC:
 
 Random generate file possible to compress but not any file.
-My algorithm can compress random generate files 1MB per 22 or more seconds to few KB. My algorithn compression has limit of size could compress not any file if size of the 2-20KB or more it can compress random generate files.
+My algorithm can compress random generate files 1MB per few hours or more seconds to few KB. My algorithn compression has limit of size could compress not any file if size of the 675-20KB or more it can compress random generate files.
 Algorithm RC:
 Random Compression
 Algorithm RC:
