@@ -234,7 +234,7 @@ class compression:
                                     compress_no=0
                                     compress_yes=0
                                     long2=len(sda3)
-                                    Deep=long2//16
+                                    Deep=long2//28
                                     times2=Deep
                                     
                                 
