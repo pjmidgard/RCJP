@@ -234,7 +234,9 @@ class compression:
                                     compress_no=0
                                     compress_yes=0
                                     long2=len(sda3)
+                                    Deep=long2//16
                                     times2=Deep
+                                    
                                 
                                     
                                     
@@ -441,6 +443,21 @@ class compression:
                                                                 
                                                                 
                                     sda9=add_bits118+sda9
+                                    
+                                    sda15 = bin(Deep)[2:]
+                                    lenf=len(sda9)
+                                    
+                                    add_bits118=""
+                                    count_bits=40-lenf%40
+                                    z=0
+                                    if count_bits!=0:
+                                        if count_bits!=8:
+                                            while z<count_bits:
+                                                add_bits118="0"+add_bits118
+                                                z=z+1
+                                                                
+                                                                
+                                    sda9=add_bits118+sda15+sda9
 
 
                                     
