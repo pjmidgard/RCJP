@@ -75,32 +75,7 @@ class compression:
                     corridors=0
                     cor=7
                     name = input("What is name of file? ")
-                    if os.path.exists(name):
-                            print('Path is exists!')
-                    else:
-                            print('Path is not exists!')
-                            raise SystemExit
-                    Deep = str(input("Please, enter Deep? "))
-
-                    x = Deep.isnumeric()
-                    if x==False:
-                                print("Sorry this not whole number")
-                                raise SystemExit
-                        
-                    if x==True:
-                        Deep=int(Deep)
-                        Deep6=(2**40)-101
-
-                        if Deep>Deep6:
-                            Deep=Deep6
-
-                        if Deep<1:
-                                Deep=100
-                                                
-                        Deep=Deep+100
-                        
-                        print(Deep-100)
-                        print("Deep")
+                    Deep = 1000
                         
                     namea="file.W"
                     namem=""
@@ -260,12 +235,10 @@ class compression:
                                     compress_yes=0
                                     long2=len(sda3)
                                     times2=Deep
-                                    times_file_not_compress=""
-                                    long14=0
-                                    long=0
+                                
+                                    
                                     
                                     block_compression2=0
-                                    times_file_compress=0
                                     
                                     start=-1
                                     while  times_compression!=times2:
@@ -294,7 +267,6 @@ class compression:
                                                 block_compression=0
                                                 block_compression2=0
                                                 long=len(sda3)
-                                                times_file_not_compress=sda3
                                                 #print(long)
                                                 
                                                 while block<long:
@@ -440,14 +412,7 @@ class compression:
                                                     Find=1
                                                     block_compression2=0
                                                 sda3=sda6
-                                                long14=len(sda3)
-                                                if long14+4<long:
-                                                    sda3=b+sda6
-                                                    times_file_compress=times_file_compress+1
-                                                    
-                                                if long14+4>=long:
-                                                    sda3=times_file_not_compress
-                                                    
+                                                
                                                 #print(len(sda6))
                                                 sda6=""
                                                 
@@ -477,9 +442,7 @@ class compression:
                                                                 
                                     sda9=add_bits118+sda9
 
-                                    sda8=bin(times_file_compress)[2:]
-                                    print(times_file_compress)
-                                    print("times_file_compress")
+                                    sda8=bin(times2)[2:]
                                     lenf=len(sda8)
                                     if lenf>40:
                                         print("size file is too big")
@@ -512,6 +475,12 @@ class compression:
                                     qqwslenf="%0"+qqwslenf+"x"
                              
                                     jl=binascii.unhexlify(qqwslenf % n)
+                                    import paq 
+                                    jl=paq.compress(jl)
+                                    jl=jl[4:]
+                                    size_after=len(jl)
+                                    print(size_after)
+                                    print("size after")
                                 
                                     qqqwz=qqqwz+1
                                     szxzzza=""
@@ -532,11 +501,6 @@ class compression:
                     corridors=0
                     cor=7
                     name = input("What is name of file? ")
-                    if os.path.exists(name):
-                            print('Path is exists!')
-                    else:
-                            print('Path is not exists!')
-                            raise SystemExit
                     Portal=2
                     namea="file.W"
                     namem=""
