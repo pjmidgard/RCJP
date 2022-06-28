@@ -75,6 +75,11 @@ class compression:
                     corridors=0
                     cor=7
                     name = input("What is name of file? ")
+                    if os.path.exists(name):
+                            print('Path is exists!')
+                    else:
+                            print('Path is not exists!')
+                            raise SystemExit
                     Deep = str(input("Please, enter Deep? "))
 
                     x = Deep.isnumeric()
@@ -527,6 +532,11 @@ class compression:
                     corridors=0
                     cor=7
                     name = input("What is name of file? ")
+                    if os.path.exists(name):
+                            print('Path is exists!')
+                    else:
+                            print('Path is not exists!')
+                            raise SystemExit
                     Portal=2
                     namea="file.W"
                     namem=""
