@@ -4,8 +4,11 @@ Random Compression
 
 Algorithm RC:
 
-Find three matches 3 that every on of this 0000-1111 matches change to two next three block 1024 bits Do this (2**40)-1 times or less.
-
-2048 bits -1 bit or +1
-
-We try to predict varition of 4 bits about (2**40)-1 or less times if we predict this varition and files we times of compress file +1 that we will save it we start from 0 and go to 15 and repeat this again and again about times on the top. When we predict and compress we save this four bits. If compress we write 0 else if file on the end compresss 0 else 1 on the end we add 1 and left bits.
+Random generate file possible to compress but not any file.
+My algorithm can compress random generate files 1MB per 22 or more seconds to few KB. My algorithn compression has limit of size could compress not any file if size of the 2-20KB or more it can compress random generate files.
+Algorithm RC:
+Random Compression
+Algorithm RC:
+Find three matches 3 that every on of this 0000-1111 matches change to two next three, block 1024 bits Do this (2**40)-1 times or less.
+2048 bits -1 bit or +1 if bigger few bytes or less.
+We try to predict variations of 4 bits about (2**40)-1 or less times if we predict this variations and files we times of compress file +1 that we will save it we start from 0 and go to 15 and repeat this again and again about times on the top. When we predict and compress we save this four bits. If compress we write 0 else if file on the end compress 0 else 1 on the end we add 1 and left bits.
