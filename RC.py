@@ -84,7 +84,7 @@ class compression:
                         
                     if x==True:
                         Deep=int(Deep)
-                        Deep6=1000-100
+                        Deep6=(2**40)-101
 
                         if Deep>Deep6:
                             Deep=Deep6
@@ -95,6 +95,7 @@ class compression:
                         Deep=Deep+100
                         
                         print(Deep-100)
+                        print("Deep")
                         
                     namea="file.W"
                     namem=""
@@ -254,10 +255,12 @@ class compression:
                                     compress_yes=0
                                     long2=len(sda3)
                                     times2=Deep
-                                
-                                    
+                                    times_file_not_compress=""
+                                    long14=0
+                                    long=0
                                     
                                     block_compression2=0
+                                    times_file_compress=0
                                     
                                     start=-1
                                     while  times_compression!=times2:
@@ -286,6 +289,7 @@ class compression:
                                                 block_compression=0
                                                 block_compression2=0
                                                 long=len(sda3)
+                                                times_file_not_compress=sda3
                                                 #print(long)
                                                 
                                                 while block<long:
@@ -431,7 +435,14 @@ class compression:
                                                     Find=1
                                                     block_compression2=0
                                                 sda3=sda6
-                                                
+                                                long14=len(sda3)
+                                                if long14+4<long:
+                                                    sda3=b+sda6
+                                                    times_file_compress=times_file_compress+1
+                                                    
+                                                if long14+4>=long:
+                                                    sda3=times_file_not_compress
+                                                    
                                                 #print(len(sda6))
                                                 sda6=""
                                                 
@@ -461,7 +472,9 @@ class compression:
                                                                 
                                     sda9=add_bits118+sda9
 
-                                    sda8=bin(times2)[2:]
+                                    sda8=bin(times_file_compress)[2:]
+                                    print(times_file_compress)
+                                    print("times_file_compress")
                                     lenf=len(sda8)
                                     if lenf>40:
                                         print("size file is too big")
