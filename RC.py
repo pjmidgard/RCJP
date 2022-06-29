@@ -792,7 +792,12 @@ class compression:
                                                                                                          sda4=str_find_tree_maches[:find_matches_8-6]+b+str_find_tree_maches[find_matches_8-3:]
                                                                                                          Find=0      
                                                                                         
-                                                                                        sda12=sda12+sda4
+                                                                                        if Find==0:
+                                                                                               sda12=sda12+sda4
+
+                                                                                        if Find==1:
+                                                                                               sda12=sda12+str_find_tree_maches
+
                                                                                         #print(Find)
                                                                                         block=block+blocks
                                                     times_compression=times_compression+1
