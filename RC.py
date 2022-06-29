@@ -263,7 +263,7 @@ class compression:
                                                                                     block_compression2=3
                                                                                 if block_compression2==5:
                                                                                     block_compression2=6                                          
-                                                                            sub_info3=str_find_tree_maches[find_matches1_number3+4:find_matches1_number3+7]
+                                                                            sub_info3=str_find_tree_maches[find_matches1_number3:find_matches1_number3+3]
                                                                             
                                                                             find_matches_1=int(str_find_tree_maches.find("000000", find_matches1_number2+4, end))
                                                                             if find_matches_1==-1:  
@@ -295,6 +295,8 @@ class compression:
                                                                                 
                                                                                 
                                                                                 sda4=str_find_tree_maches[:find_matches1_number3-4]+sub_info3+str_find_tree_maches[find_matches1_number3:]
+                                                                             
+                                                                                
                                                                                 sda5=sda5+sda4
                                                                                 if block_compression==0 and block_compression2==3:
                                                                                     block_compression=1
