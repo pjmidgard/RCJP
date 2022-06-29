@@ -180,7 +180,7 @@ class compression:
                                     compress_no=0
                                     compress_yes=0
                                     long2=len(sda3)
-                                    Deep=long2//1000
+                                    Deep=1
                                     times2=Deep
                                     
                                 
@@ -365,25 +365,7 @@ class compression:
                                                                 
                                     sda9=add_bits118+sda9
                                     
-                                    sda15 = bin(Deep)[2:]
-                                    lenf=len(sda15)
-                                    if lenf>40:
-                                        print("File too big")
-                                        x3=0.0
-                                        return print(x3)
-                                    
-                                    add_bits118=""
-                                    count_bits=40-lenf%40
-                                    
-                                    z=0
-                                    if count_bits!=0:
-                                        if count_bits!=40:
-                                            while z<count_bits:
-                                                add_bits118="0"+add_bits118
-                                                z=z+1
-                                                                
-                                                                
-                                    sda9=add_bits118+sda15+sda9
+
                                     
                                     
 
@@ -586,12 +568,12 @@ class compression:
                                      
                                     sda3=sda2
                                     
-                                    Read_times_compression=sda3[0:40]
+                                    Read_times_compression=1
                                     Read_times_compression_number=0
                                     Save_predict_find=""
                                     Read_times_compression_number = int(Read_times_compression, 2)
                                     
-                                    sda3=sda3[40:]
+                                    sda3=sda3
 
                                     predict=-1
                                     count_times_compression=0
