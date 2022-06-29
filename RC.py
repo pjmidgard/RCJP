@@ -4,65 +4,6 @@ import os
 import binascii
 self="'"
 
-
-zzaax=""
-szxzzzas=""
-asaaq=""
-assa=0
-adwll1=0
-ddf=0
-cvz31=0
-rw=0
-qqw1q=""
-lenfzzz=0
-fffgjv=""
-fffgjv1=""
-zzaax1=""
-qqqs=0
-a=0
-blockw=5
-blockw1=4
-cvb=0
-aqw1=0
-zsaqq=""
-qqqwz=0
-assx=0
-ass=0
-asss=0
-b=0
-aaqw=""
-aaqws=""
-l=""
-j=0
-b=0
-aq=0
-qfl=0
-t=0
-h=0
-byteb=""
-notexist=""
-lenf=0
-numberschangenotexistq = []
-numberschangenotexistqz = []
-qwa=0
-add=0
-m = []
-p=0
-namea=""
-d=1
-a=0
-asd=""
-b=0
-szx=""
-asf2="0b"
-while b<1790:
-    m+=[-1]
-    b=b+1
-k = []
-wer=""
-qtqweqw=""
-numberschangenotexist = []
-numbers = []
 namez = input("for compress c or extract e? ")
 #@Author Jurijus pacalovas
 class compression:
@@ -75,6 +16,11 @@ class compression:
                     corridors=0
                     cor=7
                     name = input("What is name of file? ")
+                    if os.path.exists(name):
+                            print('Path is exists!')
+                    else:
+                            print('Path is not exists!')
+                            raise SystemExit
                     Deep = 1000
                         
                     namea="file.W"
@@ -445,9 +391,10 @@ class compression:
                                     sda9=add_bits118+sda9
                                     
                                     sda15 = bin(Deep)[2:]
-                                    lenf=len(sda9)
+                                    lenf=len(sda15)
                                     if lenf>40:
-                                        print("Fle too big")
+                                        print("File too big")
+                                        x3=0.0
                                         return print(x3)
                                     
                                     add_bits118=""
@@ -504,6 +451,11 @@ class compression:
                     corridors=0
                     cor=7
                     name = input("What is name of file? ")
+                    if os.path.exists(name):
+                            print('Path is exists!')
+                    else:
+                            print('Path is not exists!')
+                            raise SystemExit
                     Portal=2
                     namea="file.W"
                     namem=""
@@ -528,7 +480,7 @@ class compression:
                     nameas=name[:name_long-name_cut]
                     nac=len(nameas)
                     
-            
+                    Deep=1000
                     
                     
                     nac=len(nameas)
