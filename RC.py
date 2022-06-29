@@ -265,17 +265,19 @@ class compression:
                                                                             
                                                                             block_compression1=block_compression1+1 
                                                                             if Find!=0:
-                                                                                compress_yes=compress_yes+1
+                                                                                
                                                                                 #print(compress_yes)
                                                                                 block_compression=0
                                                                                 block_compression1=0
                                                                                 sda4=str_find_tree_maches[:find_matches1_number1-4]+sub_info3+str_find_tree_maches[find_matches1_number1:]
                                                                                 if len(sda4)==126:
                                                                                     sda6=sda6+"0"+sda4
+                                                                                    compress_yes=compress_yes+1
                                                                                     
                                                                                     
                                                                                 else:
                                                                                         sda6=sda6+"1"+str_find_tree_maches
+                                                                                        compress_no=compress_no+1
                                                                                         
                                                                                 
                                                                                 
