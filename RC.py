@@ -180,7 +180,7 @@ class compression:
                                     compress_no=0
                                     compress_yes=0
                                     long2=len(sda3)
-                                    Deep=long2//100
+                                    Deep=long2//1000
                                     times2=Deep
                                     
                                 
