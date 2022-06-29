@@ -372,7 +372,9 @@ class compression:
                                     if long_file<=long_after:
                                         sda9="0"+sda10
                                     elif long_file>long_after:
-                                        sda9="1"+sda3   
+                                        sda9="1"+sda3
+
+                                    print(sda9)
                                     sda9="1"+sda9
 
                                     
@@ -610,12 +612,197 @@ class compression:
                                 
                                      
                                     sda3=sda2
+                                    
+                                    Read_times_compression=sda3[0:40]
+                                    Read_times_compression_number=0
+                                    Save_predict_find=""
+                                    Read_times_compression_number = int(Read_times_compression, 2)
+                                    
+                                    sda3=sda3[40:]
+
+                                    predict=-1
+                                    count_times_compression=0
+                                
+
+                                    while Read_times_compression_number!=count_times_compression:
+                                        predict=predict+1
+                                        if predict==16:
+                                            predict=0
+                                        b=format(predict,'04b')
+                                        Save_predict_find=b+Save_predict_find
+                                        count_times_compression=count_times_compression+1
                                                 
 
-                                   
-                                    n = int(sda3, 2)
-                                
-                                    qqwslenf=len(sda3)
+                                    #print(Save_predict_find)
+
+                                    if sda3[0:9]=="000000001":
+                                        sda3=sda3[9:]
+                                    elif sda3[0:8]=="00000001":
+                                        sda3=sda3[8:]
+                                    elif sda3[0:7]=="0000001":
+                                        sda3=sda3[7:]
+                                    elif sda3[0:6]=="000001":
+                                        sda3=sda3[6:]
+                                    elif sda3[0:5]=="00001":
+                                        sda3=sda3[5:]
+                                    elif sda3[0:4]=="0001":
+                                        sda3=sda3[4:]
+                                    elif sda3[0:3]=="001":
+                                        sda3=sda3[3:]
+                                    elif sda3[0:2]=="01":
+                                        sda3=sda3[2:]
+                                    elif sda3[0:1]=="1":
+                                        sda3=sda3[1:]
+                                        
+                                    extract=0
+                                    
+                                    if sda3[0:1]=="0":
+                                        extract=1
+                                    elif sda3[0:1]=="1":
+                                        extract=2
+
+                                    sda3[1:]
+                                    sda12=""
+                                    #print(extract)
+                                    if extract==1:
+                                        sda12=sda3
+
+                                    elif extract==2:
+                                        times_compression=0
+                                        
+                                        compress_no=0
+                                        compress_yes=0
+                                        long2=len(sda3)
+                                        Deep=Read_times_compression_number
+                                        times2=Deep
+                                        
+                                    
+                                        
+                                        
+                                        block_compression2=0
+                                    
+                                    
+                                        start=-1
+                                        while  times_compression!=times2:
+
+                                                    start=0
+                                                    blocks=1024
+                                                    end=blocks
+                                                    
+                                                    find_matches1_number1=0
+                                                    find_matches1_number2=0
+                                                    find_matches1_number3=0   
+                                                    
+                                                    
+                                                    
+                                                                                                 
+                                                                                                                                        
+                
+                                                    block=0
+                                                    b=Save_predict_find[times_compression*4:(times_compression*4)+4]
+                                                    
+                                                    Find=1
+                                                    block_compression1=0
+                                                    block_compression=0
+                                                    block_compression2=0
+                                                    long=len(sda3)
+                                                    #print(long)
+                                                    
+                                                    while block<long:
+                                                                                str_find_tree_maches1=sda3[block:block+1]
+                                                                                block=block+1
+                                                                                if str_find_tree_maches1=="1":
+                                                                                    str_find_tree_maches=sda3[block:block+(blocks*2)]
+                                                                                    sda12=sda12+str_find_tree_maches
+                                                                                    block=block+(blocks*2)
+                                                                                if str_find_tree_maches1=="0":
+                                                                                    blocks_count=0
+                                                                                    while blocks_count!=2:
+                                                                                        blocks_count=blocks_count+1
+                                                                                        str_find_tree_maches=sda3[block:block+blocks]
+                                                                                    
+                                                                
+                                                                                        sub_info=b
+                                                                                        sub2=b
+                                                                            
+                                                                                        
+                                                                                        find_matches1=str_find_tree_maches.find(sub_info, start, end)
+                                                                                        find_matches1_1=int(find_matches1)
+
+                                                                                        if find_matches1_1==-1:
+                                                                                            Find=0 
+                                                                                        
+                                                                                        if find_matches1_1!=-1:
+                                                                                            
+                                                                                            find_matches1_number1=int(find_matches1)
+                                                                                            if block_compression2==0:
+                                                                                                block_compression2=1
+                                                                                            if block_compression2==3:
+                                                                                                block_compression2=4                                                                               
+                                                                                            
+                                                                                        find_matches1=str_find_tree_maches.find(sub2, find_matches1_number1+4, end)
+                                                                                        find_matches1_2=int(find_matches1)
+                                                                                        
+                                                                                        if find_matches1_2==-1:
+                                                                                            Find=0  
+                        
+                                                                                        if find_matches1_2!=-1:
+                                                                                               
+                                                                                                
+                                                                                                find_matches1_number2=int(find_matches1)
+                                                                                                if block_compression2==1:
+                                                                                                    block_compression2=2
+                                                                                                if block_compression2==4:
+                                                                                                    block_compression2=5
+
+                                                                                        #print(find_matches1_number2)
+                                                                                        sda4=""
+                                                                                        Find=1
+                                                                                        find_matches_1=int(str_find_tree_maches.find("000000", find_matches1_number2+4, end))
+                                                                                        if find_matches_1==-1:
+                                                                                                         sda4=str_find_tree_maches[:find_matches_1-6]+b+str_find_tree_maches[find_matches_1-3:]
+                                                                                                         Find=0  
+                                                                                        find_matches_2=int(str_find_tree_maches.find("001001", find_matches1_number2+4, end))
+                                                                                        if find_matches_2==-1:
+                                                                                                         sda4=str_find_tree_maches[:find_matches_2-6]+b+str_find_tree_maches[find_matches_2-3:]
+                                                                                                         Find=0    
+                                                                                        find_matches_3=int(str_find_tree_maches.find("010010", find_matches1_number2+4, end))
+                                                                                        if find_matches_3==-1:
+                                                                                                         sda4=str_find_tree_maches[:find_matches_3-6]+b+str_find_tree_maches[find_matches_3-3:]
+                                                                                                         Find=0   
+
+                                                                                        find_matches_4=int(str_find_tree_maches.find("011011", find_matches1_number2+4, end))
+                                                                                        if find_matches_4==-1:
+                                                                                                         sda4=str_find_tree_maches[:find_matches_4-6]+b+str_find_tree_maches[find_matches_4-3:]
+                                                                                                         Find=0 
+                                                                                        find_matches_5=int(str_find_tree_maches.find("100100", find_matches1_number2+4, end))
+                                                                                        if find_matches_5==-1:  
+                                                                                                         sda4=str_find_tree_maches[:find_matches_5-6]+b+str_find_tree_maches[find_matches_5-3:]
+                                                                                                         Find=0 
+                                                                                        find_matches_6=int(str_find_tree_maches.find("101101", find_matches1_number2+4, end))
+                                                                                        if find_matches_6==-1:  
+                                                                                                         sda4=str_find_tree_maches[:find_matches_6-6]+b+str_find_tree_maches[find_matches_6-3:]
+                                                                                                         Find=0 
+                                                                                        find_matches_7=int(str_find_tree_maches.find("110110", find_matches1_number2+4, end))
+                                                                                        if find_matches_7==-1:  
+                                                                                                         sda4=str_find_tree_maches[:find_matches_7-6]+b+str_find_tree_maches[find_matches_7-3:]
+                                                                                                         Find=0  
+                                                                                        find_matches_8=int(str_find_tree_maches.find("111111", find_matches1_number2+4, end))
+                                                                                        if find_matches_8==-1:  
+                                                                                                         sda4=str_find_tree_maches[:find_matches_8-6]+b+str_find_tree_maches[find_matches_8-3:]
+                                                                                                         Find=0      
+                                                                                        
+                                                                                        sda12=sda12+sda4
+                                                                                        #print(Find)
+                                                                                        block=block+blocks
+                                                    times_compression=times_compression+1
+                                                    #print(times_compression)
+                                                    sda3=sda12                    
+                                      
+                                    n = int(sda12, 2)
+                                    
+                                    
+                                    qqwslenf=len(sda12)
                                     qqwslenf=(qqwslenf/8)*2
                                     qqwslenf=str(qqwslenf)
                                     qqwslenf="%0"+qqwslenf+"x"
