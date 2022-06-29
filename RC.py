@@ -369,12 +369,12 @@ class compression:
                                     print("Long after")
                                     print(long_file)
                                     print("Long before")
-                                    if long_file<=long_after:
+                                    if long_file<=long_after or long_after<=1:
                                         sda9="0"+sda10
                                     elif long_file>long_after:
                                         sda9="1"+sda3
 
-                                    print(sda9)
+                                    #print(sda9)
                                     sda9="1"+sda9
 
                                     
