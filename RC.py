@@ -446,12 +446,16 @@ class compression:
                                     
                                     sda15 = bin(Deep)[2:]
                                     lenf=len(sda9)
+                                    if lenf>40:
+                                        print("Fle too big")
+                                        return print(x3
                                     
                                     add_bits118=""
                                     count_bits=40-lenf%40
+                                    
                                     z=0
                                     if count_bits!=0:
-                                        if count_bits!=8:
+                                        if count_bits!=40:
                                             while z<count_bits:
                                                 add_bits118="0"+add_bits118
                                                 z=z+1
@@ -459,7 +463,7 @@ class compression:
                                                                 
                                     sda9=add_bits118+sda15+sda9
                                     
-                                   
+                                    
 
 
                                     
@@ -476,9 +480,7 @@ class compression:
                                     qqwslenf="%0"+qqwslenf+"x"
                              
                                     jl=binascii.unhexlify(qqwslenf % n)
-                                    import paq 
-                                    jl=paq.compress(jl)
-                                    jl=jl[4:]
+                                
                                     size_after=len(jl)
                                     print(size_after)
                                     print("size after")
