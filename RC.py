@@ -685,40 +685,57 @@ class compression:
                                                               
                                                                                         find_matches_1=int(str_find_tree_maches.find("0000", start, end))
                                                                                         if find_matches_1==0:
-                                                                                                         sda4=str_find_tree_maches[:find_matches_1]+b+str_find_tree_maches[find_matches_1+4:]
+                                                                                                         sda4=b+str_find_tree_maches[find_matches_1+2:]
                                                                                                          Find=0  
                                                                                         find_matches_2=int(str_find_tree_maches.find("0101", start, end))
                                                                                         if find_matches_2==0:
-                                                                                                         sda4=str_find_tree_maches[:find_matches_2]+b+str_find_tree_maches[find_matches_2+4:]
+                                                                                                         sda4=b+str_find_tree_maches[find_matches_2+2:]
                                                                                                          Find=0    
                                                                                         find_matches_3=int(str_find_tree_maches.find("1010", start, end))
                                                                                         if find_matches_3==0:
-                                                                                                         sda4=str_find_tree_maches[:find_matches_3]+b+str_find_tree_maches[find_matches_3+4:]
+                                                                                                         sda4=b+str_find_tree_maches[find_matches_3+2:]
                                                                                                          Find=0   
 
                                                                                         find_matches_4=int(str_find_tree_maches.find("1111", start, end))
                                                                                         if find_matches_4==0:
-                                                                                                         sda4=str_find_tree_maches[:find_matches_4]+b+str_find_tree_maches[find_matches_4+4:]
+                                                                                                         sda4=b+str_find_tree_maches[find_matches_4+2:]
                                                                                                          Find=0 
                                                                                                 
                                                                                         if Find==0:
                                                                                                sda12=sda12+sda4
+                                                                                               
+                                                                                               
+                                                                                               block=block+126
+                                                                                               
 
                                                                                         if Find==1:
+                                                                                           
+                                                                                           if   len(sda41)==128:
+                                                                                                     sda12=sda12+sda41
+                                                                                           block=block+128      
+                                                                                            
+
+                                                                                            
+                                                                                     
+                                                                                                  
                                                                                                            
  
-                                                                                               sda12=sda12+sda41
+                                                      
+ 
+                                                                                              
+                                                                                               
+                                                                                               
                                                                                                
                                                                                                
                                                                                                #print(Find)
 
                                                                                         #print(Find)
-                                                                                        block=block+blocks
+                                                                                        
                                                     times_compression=times_compression+1
                                                     #print(times_compression)
                                                     sda3=sda12
                                                     sda12=""                  
-                                    #print(len(sda3))
+                                    print(len(sda3))
                                     n = int(sda3, 2)
                                     
                                     
