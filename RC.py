@@ -371,7 +371,7 @@ class compression:
 
                                     sda20=bin(Size_file_check)[2:]
 
-                                    lenf=len(sda9)
+                                    lenf=len(sda20)
                                     if lenf>40:
                                         raise SystemExit
                                         
