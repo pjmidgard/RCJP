@@ -269,7 +269,7 @@ class compression:
                                                                                 #print(compress_yes)
                                                                                 block_compression=0
                                                                                 block_compression1=0
-                                                                                sda4=str_find_tree_maches[:find_matches1_number1-4]+str_find_tree_maches[find_matches1_number1:]
+                                                                                sda4=str_find_tree_maches[:find_matches1_number1-4]+sub_info3+str_find_tree_maches[find_matches1_number1:]
                                                                                                                                                      
                                                                                 if len(sda4)==126:
                                                                                     
@@ -278,7 +278,7 @@ class compression:
 
 
                                                                                     
-                                                                                    sub_info4=sub_info3
+                                                                                    sub_info4=sub_info3+sub_info3
                                                                                     find_matches_5=0
                                                                                     
                                                                                     find_matches_5=int(sda4.find(sub_info4, start, end))
@@ -681,16 +681,36 @@ class compression:
                                                                                         sub2=b
                                                                                         Find=1
                                                                                         sda41=b+str_find_tree_maches[4:]
-                                                                                        sda12=sda12+sda41
-                                                                                         
                                                                                          
                                                                                         
                                                                             
 
                                                               
-                                                                                                                                                   
+                                                                                        find_matches_1=int(str_find_tree_maches.find("0000", start, end))
+                                                                                        if find_matches_1==-1:
+                                                                                                         sda4=str_find_tree_maches[:find_matches_1]+b+str_find_tree_maches[find_matches_1+4:]
+                                                                                                         Find=0  
+                                                                                        find_matches_2=int(str_find_tree_maches.find("0101", start, end))
+                                                                                        if find_matches_2==-1:
+                                                                                                         sda4=str_find_tree_maches[:find_matches_2]+b+str_find_tree_maches[find_matches_2+4:]
+                                                                                                         Find=0    
+                                                                                        find_matches_3=int(str_find_tree_maches.find("1010", start, end))
+                                                                                        if find_matches_3==-1:
+                                                                                                         sda4=str_find_tree_maches[:find_matches_3]+b+str_find_tree_maches[find_matches_3+4:]
+                                                                                                         Find=0   
 
-                                                                                        
+                                                                                        find_matches_4=int(str_find_tree_maches.find("1111", start, end))
+                                                                                        if find_matches_4==-1:
+                                                                                                         sda4=str_find_tree_maches[:find_matches_4]+b+str_find_tree_maches[find_matches_4+4:]
+                                                                                                         Find=0 
+                                                                                                
+                                                                                        if Find==0:
+                                                                                               sda12=sda12+sda4
+
+                                                                                        if Find==1:
+                                                                                                           
+ 
+                                                                                               sda12=sda12+sda41
                                                                                                
                                                                                                
                                                                                                #print(Find)
