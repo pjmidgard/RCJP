@@ -285,17 +285,17 @@ class compression:
                                                                             
                                                                                     sda20=bin(Where)[2:]
                                                                                     lenf=len(sda20)
-                                                                                    if lenf>21:
+                                                                                    if lenf>22:
                                                                                         print("File too big")
                                                                                         raise SystemExit
                                                                                         
                                                                                         
                                                                                     
                                                                                     add_bits118=""
-                                                                                    count_bits=21-lenf%21
+                                                                                    count_bits=22-lenf%22
                                                                                     z=0
                                                                                     if count_bits!=0:
-                                                                                        if count_bits!=21:
+                                                                                        if count_bits!=22:
                                                                                             while z<count_bits:
                                                                                                 add_bits118="0"+add_bits118
                                                                                                 z=z+1
