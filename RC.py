@@ -21,7 +21,30 @@ class compression:
                     else:
                             print('Path is not exists!')
                             raise SystemExit
-                    Deep = 1000
+                    Z=0
+                    if Z==0:
+                        Deep = str(input("Please, enter Deep? "))
+
+                        x = Deep.isnumeric()
+                        if x==False:
+                                print("Sorry this not whole number")
+                                raise SystemExit
+                        
+                        if x==True:
+                                Deep=int(Deep)
+                                Deep6=65535-15
+
+                                if Deep>Deep6:
+                                        Deep=Deep6
+
+                                if Deep<1:
+                                        Deep=26
+                                                
+                                Deep=Deep+15
+                                
+                                print(Deep-15)
+                                print("Deep")
+                                Deep100=Deep
                         
                     namea="file.W"
                     namem=""
@@ -195,14 +218,14 @@ class compression:
                                     block_compression2=0
                                     
                                     start=-1
-                                    while  times_compression!=times2 and len(sda3)>=200:
+                                    while  times_compression!=times2 and len(sda3)>=184+Deep100:
 
 
                                                 
                                                     
 
                                                 start=0
-                                                blocks=16
+                                                blocks=Deep100
                                                 size_compress=40
                                                 end=blocks
                                                 
@@ -373,6 +396,26 @@ class compression:
                                     sda9=add_bits118+sda9
 
                                     sda24=bin(times2)[2:]
+                                    lenf=len(sda24)
+                                    if lenf>40:
+                                            print("File too big")
+                                            raise SystemExit
+                                                                                        
+                                                                                        
+                                                                                    
+                                    add_bits118=""
+                                    count_bits=40-lenf%40
+                                    z=0
+                                    if count_bits!=0:
+                                        if count_bits!=40:
+                                            while z<count_bits:
+                                                add_bits118="0"+add_bits118
+                                                z=z+1
+                                                                                                                
+                                                                                                                
+                                    sda9=add_bits118+sda24+sda9
+                                    
+                                    sda24=bin(Deep100)[2:]
                                     lenf=len(sda24)
                                     if lenf>40:
                                             print("File too big")
