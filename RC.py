@@ -411,7 +411,7 @@ class compression:
                                                                                                                 
                                     sda9=add_bits118+sda24+sda9
                                     
-                                    times2
+                                    
                                     
                                     
 
