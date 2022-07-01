@@ -253,9 +253,16 @@ class compression:
                                                 
                                                 while block<long:
                                                                             str_find_tree_maches=sda3[block:block+blocks]
+                                                                            if b[0:2]=="01":
+                                                                                                   b="10"+b[2:]
                                                     
-                                                                            sub_info=b
+
+                                                                            
+                                                                                        
+                                                                            
                                                                             sub2=b
+                                                                            sub_info=b
+                                                                            
                                                                 
                                                                             
                                                                             find_matches1=str_find_tree_maches.find(sub_info, start, end)
