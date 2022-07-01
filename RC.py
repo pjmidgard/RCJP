@@ -82,6 +82,11 @@ class compression:
 
                        # Read the whole file at once
                         data = binary_file.read()
+                        if len(data)==0:
+                            x4=0.0
+                            print(x4)
+                            raise SystemExit
+                            
                       
                  
                        
@@ -168,6 +173,7 @@ class compression:
                                 sda6=""
                                 sda7=""
                                 sda12=""
+                                sda19=""
                                 sda10=sda3
                                 predict=-1
                                 
@@ -180,7 +186,7 @@ class compression:
                                     compress_no=0
                                     compress_yes=0
                                     long2=len(sda3)
-                                    Deep=1
+                                    Deep=long2//28
                                     times2=Deep
                                     
                                 
@@ -192,7 +198,7 @@ class compression:
                                     while  times_compression!=times2:
 
                                                 start=0
-                                                blocks=128
+                                                blocks=16
                                                 end=blocks
                                                 
                                                 find_matches1_number1=0
@@ -234,73 +240,74 @@ class compression:
                                                                                 
                                                                                 find_matches1_number1=int(find_matches1)
                                        
-                                                                            sub_info3=str_find_tree_maches[find_matches1_number1:find_matches1_number1+2]
-                                                                            
-                                                                            find_matches_1=int(str_find_tree_maches.find("0000", start, end))
-                                                                            if find_matches_1==-1:  
-                                                                                             Find=0  
-                                                                            find_matches_2=int(str_find_tree_maches.find("0101", start, end))
-                                                                            if find_matches_2==-1:  
-                                                                                             Find=0    
-                                                                            find_matches_3=int(str_find_tree_maches.find("1010", start, end))
-                                                                            if find_matches_3==-1:  
-                                                                                             Find=0   
+                                                                                if find_matches1_1==0:
 
-                                                                            find_matches_4=int(str_find_tree_maches.find("1111", start, end))
-                                                                            if find_matches_4==-1:  
-                                                                                             Find=0
+                                                                                    sda4=sda4[:0]+"00"+sda4[4:]
+
+                                                                                if find_matches1_1==2:
+
+                                                                                    sda4=sda4[:2]+"01"+sda4[6:]
+
+                                                                                if find_matches1_1==4:
+                                                                                    sda4=sda4[:4]+"10"+sda4[8:]
+
+                                                                                if find_matches1_1==6:
+                                                                                    sda4=sda4[:6]+"11"+sda4[10:]
+
+                                                                                Where=0
                                                                                  
-                                                                                                                       
-     
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                             
-                                                                                
-                                                                                
+                                                                                sub_info1="00"                                       
+                                                                                find_matches2=str_find_tree_maches.find(sub_info1, start, end)
+                                                                                find_matches1_2=int(find_matches2)
+                                                                                if find_matches1_2==0:
+                                                                                    Where=block+0
 
-                                                                        
-                                                                            
-                                                                            
-                                                                            block_compression1=block_compression1+1 
+                                                                                sub_info1="01"                                       
+                                                                                find_matches3=str_find_tree_maches.find(sub_info1, start, end)
+                                                                                find_matches1_3=int(find_matches3)
+                                                                                if find_matches1_3==2:
+                                                                                    Where=block+2
+
+                                                                                sub_info1="10"                                       
+                                                                                find_matches3=str_find_tree_maches.find(sub_info1, start, end)
+                                                                                find_matches1_3=int(find_matches3)
+                                                                                if find_matches1_3==4:
+                                                                                    Where=block+4
+
+                                                                                sub_info1="11"                                       
+                                                                                find_matches4=str_find_tree_maches.find(sub_info1, start, end)
+                                                                                find_matches1_4=int(find_matches4)
+                                                                                if find_matches1_4==6:
+                                                                                    Where=block+6
+
+                                                                                
+                                                                                if Where!=0:
+                                                                                    sda20=bin(Where)[2:]
+                                                                                    lenf=len(sda20)
+                                                                                    if lenf>32:
+                                                                                        print("File too big")
+                                                                                        
+                                                                                        
+                                                                                    
+                                                                                    add_bits118=""
+                                                                                    count_bits=32-lenf%32
+                                                                                    z=0
+                                                                                    if count_bits!=0:
+                                                                                        if count_bits!=32:
+                                                                                            while z<count_bits:
+                                                                                                add_bits118="0"+add_bits118
+                                                                                                z=z+1
+                                                                                                                
+                                                                                                                
+                                                                                    sda19=add_bits118+sda20+sda19
+                                                                                
+                                                                                                                     
                                                                             if Find!=0:
                                                                                 
-                                                                                #print(compress_yes)
-                                                                                block_compression=0
-                                                                                block_compression1=0
-                                                                                sda4=str_find_tree_maches[:find_matches1_number1-4]+sub_info3+str_find_tree_maches[find_matches1_number1:]
-                                                                                                                                                     
-                                                                                if len(sda4)==126:
-                                                                                    
-   
-
-
-
-                                                                                    
-                                                                                    sub_info4=sub_info3+sub_info3
-                                                                                    find_matches_5=0
-                                                                                    
-                                                                                    find_matches_5=int(sda4.find(sub_info4, start, end))
-                                                                                             
-                                                                                                                                                                                                                                                  
-                                                                                    
-                                                                                    
-                                                                                    if find_matches_5!=0:
-                                                                                        sda6=sda6+"1"+str_find_tree_maches
-                                                                                        compress_no=compress_no+1
-                                                                                        
-                                                                                    if find_matches_5==0:
-                                                                                        sda6=sda6+"0"+sda4    
-                                                                                        compress_yes=compress_yes+1                                                                
+                                                                               
+                                                                                sda6=sda6+sda4    
+                                                                                compress_yes=compress_yes+1                                                                
                                                                           
-                                                                                else:
-                                                                                        sda6=sda6+"1"+str_find_tree_maches
-                                                                                        compress_no=compress_no+1
-                                                                                        
-                                                                                
-                                                                                
-                                                                                
                                                                                 sda5=""
                                                                                 sda7=""
                                                                                 sda12=""
@@ -314,7 +321,7 @@ class compression:
                                                                             
                                                                                 block_compression=0
                                                                                 block_compression1=0
-                                                                                sda6=sda6+"1"+str_find_tree_maches
+                                                                                sda6=sda6+str_find_tree_maches
                                                                                 
                                                                                 sda5=""
                                                                                 sda7=""
@@ -348,7 +355,25 @@ class compression:
                                         sda9="1"+sda3
 
                                     #print(sda9)
-                                    sda9="1"+sda9
+                                    long=len(sda19)    
+                                    sda21=bin(long)[2:]
+                                    lenf=len(sda21)
+                                    if lenf>32:
+                                            print("File too big")
+                                                                                    
+                                                                                   
+                                                                                
+                                    add_bits118=""
+                                    count_bits=32-lenf%32
+                                    z=0
+                                    if count_bits!=0:
+                                        if count_bits!=32:
+                                            while z<count_bits:
+                                                add_bits118="0"+add_bits118
+                                                z=z+1
+                                                
+                                    sda22=add_bits118+sda21+sda19     
+                                    sda9="1"+sda22+sda9
 
                                     
                                     lenf=len(sda9)
@@ -364,8 +389,27 @@ class compression:
                                                                 
                                                                 
                                     sda9=add_bits118+sda9
-                                    
 
+                                    sda24=bin(times2)[2:]
+                                    lenf=len(sda24)
+                                    if lenf>32:
+                                            print("File too big")
+                                                                                        
+                                                                                        
+                                                                                    
+                                    add_bits118=""
+                                    count_bits=32-lenf%32
+                                    z=0
+                                    if count_bits!=0:
+                                        if count_bits!=32:
+                                            while z<count_bits:
+                                                add_bits118="0"+add_bits118
+                                                z=z+1
+                                                                                                                
+                                                                                                                
+                                    sda9=add_bits118+sda24+sda9
+                                    
+                                    times2
                                     
                                     
 
@@ -486,6 +530,10 @@ class compression:
                        # Read the whole file at once
                         
                         data = binary_file.read()
+                        if len(data)==0:
+                            x4=0.0
+                            print(x4)
+                            raise SystemExit
                      
                                              
                                              
