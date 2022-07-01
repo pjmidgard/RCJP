@@ -287,6 +287,7 @@ class compression:
                                                                                     lenf=len(sda20)
                                                                                     if lenf>21:
                                                                                         print("File too big")
+                                                                                        raise SystemExit
                                                                                         
                                                                                         
                                                                                     
@@ -362,6 +363,7 @@ class compression:
                                     lenf=len(sda21)
                                     if lenf>32:
                                             print("File too big")
+                                            raise SystemExit
                                                                                     
                                                                                    
                                                                                 
@@ -396,6 +398,7 @@ class compression:
                                     lenf=len(sda24)
                                     if lenf>32:
                                             print("File too big")
+                                            raise SystemExit
                                                                                         
                                                                                         
                                                                                     
