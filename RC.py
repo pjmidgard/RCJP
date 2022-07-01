@@ -308,6 +308,7 @@ class compression:
                                                                                                                     
                                                                                                                     
                                                                                         sda19="1"+add_bits118+sda20+sda19
+                                                                                        Find=0
 
                                                                                 
                                                                                 
