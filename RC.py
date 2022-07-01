@@ -270,12 +270,12 @@ class compression:
                                        
                                                                                 if find_matches1_1==0:
 
-                                                                                    sda4=str_find_tree_maches[:0]+"00"+str_find_tree_maches[4:]
+                                                                                    sda4=str_find_tree_maches[:0]+"01"+str_find_tree_maches[4:]
 
 
                                                                                 Where=0
                                                                                  
-                                                                                sub_info1="00"                                       
+                                                                                sub_info1="01"                                       
                                                                                 find_matches2=str_find_tree_maches.find(sub_info1, start, end)
                                                                                 find_matches1_2=int(find_matches2)
                                                                                 if find_matches1_2==0:
