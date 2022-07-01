@@ -282,6 +282,7 @@ class compression:
 
                                                                                 
                                                                                 if Where!=0:
+                                                                            
                                                                                     sda20=bin(Where)[2:]
                                                                                     lenf=len(sda20)
                                                                                     if lenf>32:
@@ -299,7 +300,7 @@ class compression:
                                                                                                 z=z+1
                                                                                                                 
                                                                                                                 
-                                                                                    sda19=add_bits118+sda20+sda19
+                                                                                    sda19="1"+add_bits118+sda20+sda19
                                                                                 
                                                                                                                      
                                                                             if Find!=0:
@@ -333,6 +334,7 @@ class compression:
                                                                             #print(block)
                                                      
                                                 times_compression=times_compression+1
+                                                sda19="0"+sda19
                                                 #print(times_compression)
                                                 
                                                 
