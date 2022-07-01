@@ -195,7 +195,11 @@ class compression:
                                     block_compression2=0
                                     
                                     start=-1
-                                    while  times_compression!=times2:
+                                    while  times_compression!=times2 and len(sda3)>=200:
+
+
+                                                
+                                                    
 
                                                 start=0
                                                 blocks=16
