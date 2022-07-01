@@ -203,7 +203,7 @@ class compression:
 
                                                 start=0
                                                 blocks=16
-                                                size_compress=19
+                                                size_compress=40
                                                 end=blocks
                                                 
                                                 find_matches1_number1=0
@@ -249,15 +249,6 @@ class compression:
 
                                                                                     sda4=str_find_tree_maches[:0]+"00"+str_find_tree_maches[4:]
 
-                                                                                elif find_matches1_1==2:
-
-                                                                                    sda4=str_find_tree_maches[:2]+"01"+str_find_tree_maches[6:]
-
-                                                                                elif find_matches1_1==4:
-                                                                                    sda4=str_find_tree_maches[:4]+"10"+str_find_tree_maches[8:]
-
-                                                                                elif find_matches1_1==6:
-                                                                                    sda4=str_find_tree_maches[:6]+"11"+str_find_tree_maches[10:]
 
                                                                                 Where=0
                                                                                  
@@ -288,88 +279,7 @@ class compression:
                                                                                                                     
                                                                                         sda19="1"+add_bits118+sda20+sda19
 
-                                                                                sub_info1="01"                                       
-                                                                                find_matches3=str_find_tree_maches.find(sub_info1, start, end)
-                                                                                find_matches1_3=int(find_matches3)
-                                                                                if find_matches1_3==2:
-                                                                                    Where=block+2
-                                                                                    if Where!=0:
                                                                                 
-                                                                                        sda20=bin(Where)[2:]
-                                                                                        lenf=len(sda20)
-                                                                                        if lenf>size_compress:
-                                                                                            print("File too big")
-                                                                                            raise SystemExit
-                                                                                            
-                                                                                            
-                                                                                        
-                                                                                        add_bits118=""
-                                                                                        count_bits=size_compress-lenf%size_compress
-                                                                                        z=0
-                                                                                        if count_bits!=0:
-                                                                                            if count_bits!=size_compress:
-                                                                                                while z<count_bits:
-                                                                                                    add_bits118="0"+add_bits118
-                                                                                                    z=z+1
-                                                                                                                    
-                                                                                                                    
-                                                                                        sda19="1"+add_bits118+sda20+sda19
-
-                                                                                sub_info1="10"                                       
-                                                                                find_matches3=str_find_tree_maches.find(sub_info1, start, end)
-                                                                                find_matches1_3=int(find_matches3)
-                                                                                if find_matches1_3==4:
-                                                                                    Where=block+4
-                                                                                    if Where!=0:
-                                                                                
-                                                                                        sda20=bin(Where)[2:]
-                                                                                        lenf=len(sda20)
-                                                                                        if lenf>size_compress:
-                                                                                            print("File too big")
-                                                                                            raise SystemExit
-                                                                                            
-                                                                                            
-                                                                                        
-                                                                                        add_bits118=""
-                                                                                        count_bits=size_compress-lenf%size_compress
-                                                                                        z=0
-                                                                                        if count_bits!=0:
-                                                                                            if count_bits!=size_compress:
-                                                                                                while z<count_bits:
-                                                                                                    add_bits118="0"+add_bits118
-                                                                                                    z=z+1
-                                                                                                                    
-                                                                                                                    
-                                                                                        sda19="1"+add_bits118+sda20+sda19
-
-                                                                                sub_info1="11"                                       
-                                                                                find_matches4=str_find_tree_maches.find(sub_info1, start, end)
-                                                                                find_matches1_4=int(find_matches4)
-                                                                                if find_matches1_4==6:
-                                                                                    Where=block+6
-
-                                                                                    
-                                                                                    if Where!=0:
-                                                                                
-                                                                                        sda20=bin(Where)[2:]
-                                                                                        lenf=len(sda20)
-                                                                                        if lenf>size_compress:
-                                                                                            print("File too big")
-                                                                                            raise SystemExit
-                                                                                            
-                                                                                            
-                                                                                        
-                                                                                        add_bits118=""
-                                                                                        count_bits=size_compress-lenf%size_compress
-                                                                                        z=0
-                                                                                        if count_bits!=0:
-                                                                                            if count_bits!=size_compress:
-                                                                                                while z<count_bits:
-                                                                                                    add_bits118="0"+add_bits118
-                                                                                                    z=z+1
-                                                                                                                    
-                                                                                                                    
-                                                                                        sda19="1"+add_bits118+sda20+sda19
                                                                                 
                                                                                                                      
                                                                             if Find!=0:
