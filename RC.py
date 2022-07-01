@@ -203,6 +203,7 @@ class compression:
 
                                                 start=0
                                                 blocks=16
+                                                size_compress=20
                                                 end=blocks
                                                 
                                                 find_matches1_number1=0
@@ -269,17 +270,17 @@ class compression:
                                                                                 
                                                                                         sda20=bin(Where)[2:]
                                                                                         lenf=len(sda20)
-                                                                                        if lenf>16:
+                                                                                        if lenf>size_compress:
                                                                                             print("File too big")
                                                                                             raise SystemExit
                                                                                             
                                                                                             
                                                                                         
                                                                                         add_bits118=""
-                                                                                        count_bits=16-lenf%16
+                                                                                        count_bits=size_compress-lenf%size_compress
                                                                                         z=0
                                                                                         if count_bits!=0:
-                                                                                            if count_bits!=16:
+                                                                                            if count_bits!=size_compress:
                                                                                                 while z<count_bits:
                                                                                                     add_bits118="0"+add_bits118
                                                                                                     z=z+1
@@ -296,17 +297,17 @@ class compression:
                                                                                 
                                                                                         sda20=bin(Where)[2:]
                                                                                         lenf=len(sda20)
-                                                                                        if lenf>16:
+                                                                                        if lenf>size_compress:
                                                                                             print("File too big")
                                                                                             raise SystemExit
                                                                                             
                                                                                             
                                                                                         
                                                                                         add_bits118=""
-                                                                                        count_bits=16-lenf%16
+                                                                                        count_bits=size_compress-lenf%size_compress
                                                                                         z=0
                                                                                         if count_bits!=0:
-                                                                                            if count_bits!=16:
+                                                                                            if count_bits!=size_compress:
                                                                                                 while z<count_bits:
                                                                                                     add_bits118="0"+add_bits118
                                                                                                     z=z+1
@@ -323,17 +324,17 @@ class compression:
                                                                                 
                                                                                         sda20=bin(Where)[2:]
                                                                                         lenf=len(sda20)
-                                                                                        if lenf>16:
+                                                                                        if lenf>size_compress:
                                                                                             print("File too big")
                                                                                             raise SystemExit
                                                                                             
                                                                                             
                                                                                         
                                                                                         add_bits118=""
-                                                                                        count_bits=16-lenf%16
+                                                                                        count_bits=size_compress-lenf%size_compress
                                                                                         z=0
                                                                                         if count_bits!=0:
-                                                                                            if count_bits!=16:
+                                                                                            if count_bits!=size_compress:
                                                                                                 while z<count_bits:
                                                                                                     add_bits118="0"+add_bits118
                                                                                                     z=z+1
@@ -352,17 +353,17 @@ class compression:
                                                                                 
                                                                                         sda20=bin(Where)[2:]
                                                                                         lenf=len(sda20)
-                                                                                        if lenf>16:
+                                                                                        if lenf>size_compress:
                                                                                             print("File too big")
                                                                                             raise SystemExit
                                                                                             
                                                                                             
                                                                                         
                                                                                         add_bits118=""
-                                                                                        count_bits=16-lenf%16
+                                                                                        count_bits=size_compress-lenf%size_compress
                                                                                         z=0
                                                                                         if count_bits!=0:
-                                                                                            if count_bits!=16:
+                                                                                            if count_bits!=size_compress:
                                                                                                 while z<count_bits:
                                                                                                     add_bits118="0"+add_bits118
                                                                                                     z=z+1
