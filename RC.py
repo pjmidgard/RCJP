@@ -339,17 +339,17 @@ class compression:
                                     long=len(sda19)    
                                     sda21=bin(long)[2:]
                                     lenf=len(sda21)
-                                    if lenf>32:
+                                    if lenf>40:
                                             print("File too big")
                                             raise SystemExit
                                                                                     
                                                                                    
                                                                                 
                                     add_bits118=""
-                                    count_bits=32-lenf%32
+                                    count_bits=40-lenf%40
                                     z=0
                                     if count_bits!=0:
-                                        if count_bits!=32:
+                                        if count_bits!=40:
                                             while z<count_bits:
                                                 add_bits118="0"+add_bits118
                                                 z=z+1
@@ -374,17 +374,17 @@ class compression:
 
                                     sda24=bin(times2)[2:]
                                     lenf=len(sda24)
-                                    if lenf>32:
+                                    if lenf>40:
                                             print("File too big")
                                             raise SystemExit
                                                                                         
                                                                                         
                                                                                     
                                     add_bits118=""
-                                    count_bits=32-lenf%32
+                                    count_bits=40-lenf%40
                                     z=0
                                     if count_bits!=0:
-                                        if count_bits!=32:
+                                        if count_bits!=40:
                                             while z<count_bits:
                                                 add_bits118="0"+add_bits118
                                                 z=z+1
