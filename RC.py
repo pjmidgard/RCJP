@@ -203,7 +203,7 @@ class compression:
 
                                                 start=0
                                                 blocks=16
-                                                size_compress=20
+                                                size_compress=19
                                                 end=blocks
                                                 
                                                 find_matches1_number1=0
