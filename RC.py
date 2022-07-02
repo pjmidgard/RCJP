@@ -428,6 +428,7 @@ class compression:
                                             Deep100=Deep100+1
                                             sda9=""
                                             sda19=""
+                                            start=-1
                                         elif long_file>long_after:
                                             Find_guess=1
                                             
