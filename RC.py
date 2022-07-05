@@ -831,7 +831,7 @@ class compression:
                                                         if Circle_count=="0":
                                                             Binary_code=Binary_code[1:]
                                                             Program=0
-                                                            Infromation_program=Binary_code
+                                                        Infromation_program=Binary_code
                                                         
                                                         while block<long:
                                                                                     str_find_tree_maches1=sda3[block:block+blocks]
