@@ -750,26 +750,28 @@ class compression:
                                         Binary_code=""
                                         sda3=sda3[long_open_binary_code:]
 
-                                        while Program!=long_open_binary_code:
-                                            Program_code=Infromation_program[Program:Program+1]
-                                            if Program_code=="0":
-                                                Binary_code=Program_code+Binary_code
-                                                Program=Program+1
-                                            elif Program_code=="1":
-                                                Program=Program+1
-                                                Program_code_6_bits=Infromation_program[Program:Program+6]
-                                                Binary_code=Program_code_6_bits+Binary_code
-                                                Program=Program+6
-                                                Program_code_6_bits_binary=int(Program_code_6_bits,2)
-                                                Secret_code=Infromation_program[Program:Program+Program_code_6_bits_binary]
-                                                Binary_code=Secret_code+Binary_code
-                                                Program=Program+Program_code_6_bits_binary
-                                                Forty=40
-                                                Left=0
-                                                Left=Forty-Program_code_6_bits_binary
-                                                Secret_left=Infromation_program[Program:Program+Left]
-                                                Binary_code=Secret_left+Binary_code
-                                                Program=Program+Left
+                                        if long_open_binary_code!=0:
+
+                                            while Program!=long_open_binary_code:
+                                                Program_code=Infromation_program[Program:Program+1]
+                                                if Program_code=="0":
+                                                    Binary_code=Program_code+Binary_code
+                                                    Program=Program+1
+                                                elif Program_code=="1":
+                                                    Program=Program+1
+                                                    Program_code_6_bits=Infromation_program[Program:Program+6]
+                                                    Binary_code=Program_code_6_bits+Binary_code
+                                                    Program=Program+6
+                                                    Program_code_6_bits_binary=int(Program_code_6_bits,2)
+                                                    Secret_code=Infromation_program[Program:Program+Program_code_6_bits_binary]
+                                                    Binary_code=Secret_code+Binary_code
+                                                    Program=Program+Program_code_6_bits_binary
+                                                    Forty=40
+                                                    Left=0
+                                                    Left=Forty-Program_code_6_bits_binary
+                                                    Secret_left=Infromation_program[Program:Program+Left]
+                                                    Binary_code=Secret_left+Binary_code
+                                                    Program=Program+Left
 
                                         extract=0
                                         
@@ -831,7 +833,9 @@ class compression:
                                                         if Circle_count=="0":
                                                             Binary_code=Binary_code[1:]
                                                             Program=0
+                                                            
                                                         Infromation_program=Binary_code
+                                                        Long_Info=len(Infromation_program)
                                                         
                                                         while block<long:
                                                                                     str_find_tree_maches1=sda3[block:block+blocks]
@@ -841,27 +845,27 @@ class compression:
 
                                                                                     Binary_code2=""
                                                                                     Have_number=-1
+                                                                                    if Long_Info!=0:
+                                                                                        Program_code1=Infromation_program[Program:Program+1]
+                                                                                        if Program_code1=="1":
+                                                                                            Program=Program+1
+                                                                                            Program_code_6_bits=Infromation_program[Program:Program+6]
+                                                                                            Binary_code1=Program_code_6_bits+Binary_code1
+                                                                                            Program=Program+6
+                                                                                            Program_code_6_bits_binary=int(Program_code_6_bits,2)
+                                                                                            Secret_code=Infromation_program[Program:Program+Program_code_6_bits_binary]
+                                                                                            Binary_code1=Secret_code+Binary_code1
+                                                                                            Binary_code2=Secret_code+Binary_code2
+                                                                                            Program=Program+Program_code_6_bits_binary
+                                                                                            Forty=40
+                                                                                            Left=0
+                                                                                            Left=Forty-Program_code_6_bits_binary
+                                                                                            Secret_left=Infromation_program[Program:Program+Left]
+                                                                                            Binary_code1=Secret_left+Binary_code1
+                                                                                            Binary_code2=Secret_left+Binary_code2
+                                                                                            Program=Program+Left
 
-                                                                                    Program_code1=Infromation_program[Program:Program+1]
-                                                                                    if Program_code1=="1":
-                                                                                        Program=Program+1
-                                                                                        Program_code_6_bits=Infromation_program[Program:Program+6]
-                                                                                        Binary_code1=Program_code_6_bits+Binary_code1
-                                                                                        Program=Program+6
-                                                                                        Program_code_6_bits_binary=int(Program_code_6_bits,2)
-                                                                                        Secret_code=Infromation_program[Program:Program+Program_code_6_bits_binary]
-                                                                                        Binary_code1=Secret_code+Binary_code1
-                                                                                        Binary_code2=Secret_code+Binary_code2
-                                                                                        Program=Program+Program_code_6_bits_binary
-                                                                                        Forty=40
-                                                                                        Left=0
-                                                                                        Left=Forty-Program_code_6_bits_binary
-                                                                                        Secret_left=Infromation_program[Program:Program+Left]
-                                                                                        Binary_code1=Secret_left+Binary_code1
-                                                                                        Binary_code2=Secret_left+Binary_code2
-                                                                                        Program=Program+Left
-
-                                                                                        Have_number=int(Binary_code2,2)
+                                                                                            Have_number=int(Binary_code2,2)
                                                                                 
                                                                                     if find_matches1_1==0 and block!=Have_number:
                                                                                         sda4=str_find_tree_maches1[:0]+b+str_find_tree_maches[2:]
