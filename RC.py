@@ -865,7 +865,7 @@ class compression:
                                                                                             Secret_left=Infromation_program[Program:Program+Left]
                                                                                             Binary_code1=Secret_left+Binary_code1
                                                                                             Binary_code2=Secret_left+Binary_code2
-                                                                                            Program=Program+Left
+                                                                                            
 
                                                                                             Have_number=int(Binary_code2,2)
                                                                                             Infromation_program=Infromation_program[Program+Left:]
