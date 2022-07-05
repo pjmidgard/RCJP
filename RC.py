@@ -845,6 +845,8 @@ class compression:
 
                                                                                     Binary_code2=""
                                                                                     Have_number=-1
+                                                                                    Program=0
+                                                                                    
                                                                                     if Long_Info!=0:
                                                                                         Program_code1=Infromation_program[Program:Program+1]
                                                                                         if Program_code1=="1":
@@ -866,6 +868,7 @@ class compression:
                                                                                             Program=Program+Left
 
                                                                                             Have_number=int(Binary_code2,2)
+                                                                                            Infromation_program=Infromation_program[Program+Left:]
                                                                                 
                                                                                     if find_matches1_1==0 and block!=Have_number:
                                                                                         sda4=str_find_tree_maches1[:0]+b+str_find_tree_maches[2:]
