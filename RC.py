@@ -840,7 +840,7 @@ class compression:
                                                                                     find_matches1_1=int(find_matches1)
 
                                                                                     Binary_code2=""
-                                                                                    Have_number=0
+                                                                                    Have_number=-1
 
                                                                                     Program_code1=Infromation_program[Program:Program+1]
                                                                                     if Program_code1=="1":
