@@ -839,6 +839,8 @@ class compression:
                                                         
                                                         while block<long:
                                                                                     str_find_tree_maches1=sda3[block:block+blocks]
+                                                                                    sub_info="01"
+                                                                                    
 
                                                                                     find_matches1=str_find_tree_maches1.find(sub_info, start, end)
                                                                                     find_matches1_1=int(find_matches1)
