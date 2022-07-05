@@ -1,3 +1,6 @@
+#sda information data
+#Deep100 blocks
+#Deep101 Time exract
 from time import time
 cvf=0
 import os
@@ -177,6 +180,9 @@ class compression:
                                 sda19=""
                                 sda10=sda3
                                 predict=-1
+                                Where2=0
+                                Where3=0
+                                Deep101=0
                                 
                                 
 
@@ -235,11 +241,7 @@ class compression:
                                                     while block<long:
                                                                                 str_find_tree_maches=sda3[block:block+blocks]
                                                                                 if b[0:2]=="01":
-                                                                                                       b="10"+b[2:]
-                                                        
-
-                                                                                
-                                                                                            
+                                                                                    b="10"+b[2:]
                                                                                 
                                                                                 sub2=b
                                                                                 sub_info=b
@@ -259,6 +261,12 @@ class compression:
                                                                                     if find_matches1_1==0:
 
                                                                                         sda4=str_find_tree_maches[:0]+"01"+str_find_tree_maches[4:]
+                                                                                        Where3=block+0
+                                                                                        Where2=Where2+2
+                                                                                        
+                                                                                        
+                                                                                        
+                                                                                        
 
 
                                                                                     Where=0
@@ -268,9 +276,10 @@ class compression:
                                                                                     find_matches1_2=int(find_matches2)
                                                                                     if find_matches1_2==0:
                                                                                         Where=block+0
+                                                                                        
                                                                                         if Where!=0:
                                                                                     
-                                                                                            sda20=bin(Where)[2:]
+                                                                                            sda20=bin(Where-Where2)[2:]
                                                                                             lenf=len(sda20)
                                                                                             if lenf>size_compress:
                                                                                                 print("File too big")
@@ -288,7 +297,28 @@ class compression:
                                                                                                         z=z+1
                                                                                                                         
                                                                                                                         
-                                                                                            sda19="1"+add_bits118+sda20+sda19
+                                                                                            sda30=sda20
+                                                                                            bits=len(add_bits118)
+                                                                                            sda25=bin(bits)[2:]
+                                                                                            lenf=len(sda25)
+                                                                                            if lenf>6:
+                                                                                                print("File too big")
+                                                                                                raise SystemExit
+                                                                                                
+                                                                                                
+                                                                                            
+                                                                                            add_bits119=""
+                                                                                            count_bits=6-lenf%6
+                                                                                            z=0
+                                                                                            if count_bits!=0:
+                                                                                                if count_bits!=6:
+                                                                                                    while z<count_bits:
+                                                                                                        add_bits119="0"+add_bits119
+                                                                                                        z=z+1
+                                                                                                                        
+                                                                                                                        
+                                                                                            sda19="1"+sda19+add_bits119+sda25+sda30
+                                                                                            
                                                                                             Find=0
 
                                                                                     
@@ -325,7 +355,7 @@ class compression:
                                                                                 #print(block)
                                                          
                                                     times_compression=times_compression+1
-                                                    sda19="0"+sda19
+                                                    sda19=sda19+"0"
                                                     #print(times_compression)
                                                     
                                                     
@@ -333,6 +363,8 @@ class compression:
                                                         
                 
                                                     sda3=sda6
+                                                    Where2=0
+                                                    Where3=0
                                                     
                                                     #print(len(sda6))
                                                     sda6=""
@@ -381,7 +413,7 @@ class compression:
                                                                     
                                         sda9=add_bits118+sda9
 
-                                        sda24=bin(times2)[2:]
+                                        sda24=bin(times_compression)[2:]
                                         lenf=len(sda24)
                                         if lenf>40:
                                                 print("File too big")
@@ -423,19 +455,53 @@ class compression:
 
                                         long_file=len(sda10)
                                         long_after=len(sda9)
-                                        if long_file<=long_after or long_after<=1:
-                                            sda3=sda10
+                                        if long_file>long_after and long_after<=168 or lenf>39 or Deep100>=long_after:
+                                            sda11=sda9
+                                            Find_guess=1
+                                            
+                                        elif long_file<=long_after:
+                                            sda3=sda9
                                             Deep100=Deep100+1
+                                            Deep101=Deep101+1
                                             sda9=""
                                             sda19=""
                                             start=-1
-                                        elif long_file>long_after:
-                                            Find_guess=1
+                                            times_compression=0
+                                            predict=-1
                                             
-                                        
-                                    n = int(sda9, 2)
+                                        elif long_file>long_after:
+                                            sda3=sda9
+                                            Deep100=Deep100+1
+                                            Deep101=Deep101+1
+                                            sda9=""
+                                            sda19=""
+                                            start=-1
+                                            times_compression=0
+                                            predict=-1
+                                            
+                                    sda24=bin(Deep101)[2:]
+                                    lenf=len(sda24)
+                                    if lenf>40:
+                                        print("File too big")
+                                        raise SystemExit
+                                                                                            
+                                                                                            
+                                                                                        
+                                    add_bits118=""
+                                    count_bits=40-lenf%40
+                                    z=0
+                                    if count_bits!=0:
+                                        if count_bits!=40:
+                                            while z<count_bits:
+                                                add_bits118="0"+add_bits118
+                                                z=z+1
+                                                                                                                    
+                                                                                                                    
+                                    sda11=add_bits118+sda24+sda11
+                                    
+                                    n = int(sda11, 2)
                                 
-                                    qqwslenf=len(sda9)
+                                    qqwslenf=len(sda11)
                                     qqwslenf=(qqwslenf/8)*2
                                     qqwslenf=str(qqwslenf)
                                     qqwslenf="%0"+qqwslenf+"x"
@@ -545,13 +611,7 @@ class compression:
                             x4=0.0
                             print(x4)
                             raise SystemExit
-                     
-                                             
-                                             
-                        
-                        
-                        
-                        		
+                     	
 
                         s=str(data)
                        
@@ -624,162 +684,200 @@ class compression:
                                 x4=1
                                 if x4==1:
                                 
-                                     
+                                    
                                     sda3=sda2
-                                    
-                                    
-                                    Read_times_compression_number=0
-                                    Save_predict_find=""
-                                    Read_times_compression_number = 1
-                                    
-                                    sda3=sda3
+                                    Times_extract_of_times=sda3[0:40]
+                                    sda3=sda3[40:]
+                                    Times_extract_number=int(Times_extract_of_times,2)
+                                    Times_count=0
+                                    while Times_extract!=Times_count:
 
-                                    predict=-1
-                                    count_times_compression=0
-                                
-
-                                    while Read_times_compression_number!=count_times_compression:
-                                        predict=predict+1
-                                        if predict==16:
-                                            predict=0
-                                        b=format(predict,'04b')
-                                        Save_predict_find=b+Save_predict_find
-                                        count_times_compression=count_times_compression+1
-                                                
-
-                                    #print(Save_predict_find)
-
-                                    if sda3[0:9]=="000000001":
-                                        sda3=sda3[9:]
-                                    elif sda3[0:8]=="00000001":
-                                        sda3=sda3[8:]
-                                    elif sda3[0:7]=="0000001":
-                                        sda3=sda3[7:]
-                                    elif sda3[0:6]=="000001":
-                                        sda3=sda3[6:]
-                                    elif sda3[0:5]=="00001":
-                                        sda3=sda3[5:]
-                                    elif sda3[0:4]=="0001":
-                                        sda3=sda3[4:]
-                                    elif sda3[0:3]=="001":
-                                        sda3=sda3[3:]
-                                    elif sda3[0:2]=="01":
-                                        sda3=sda3[2:]
-                                    elif sda3[0:1]=="1":
-                                        sda3=sda3[1:]
+                                        Blocks_long=sda3[0:40]
+                                        sda3=sda3[40:]
+                                        Blocks_long_number=int(Blocks_long,2)
                                         
-                                    extract=0
-                                    
-                                    if sda3[0:1]=="0":
-                                        extract=1
-                                    elif sda3[0:1]=="1":
-                                        extract=2
+                                        Read_times_compression_info=sda3[0:40]
+                                        Save_predict_find=""
+                                        Read_times_compression_number = sda3(Read_times_compression_info,2)
+                                        
+                                        sda3=sda3[40:]
 
-                                    sda3[1:]
-                                    sda12=""
-                                    #print(extract)
-                                    if extract==1:
-                                        sda12=sda3
+                                        
 
-                                    elif extract==2:
-                                        times_compression=0
-                                        
-                                        compress_no=0
-                                        compress_yes=0
-                                        long2=len(sda3)
-                                        Deep=Read_times_compression_number
-                                        times2=Deep
-                                        
+                                        predict=-1
+                                        count_times_compression=0
                                     
-                                        
-                                        
-                                        block_compression2=0
-                                    
-                                    
-                                        start=-1
-                                        while  times_compression!=times2:
 
-                                                    start=0
-                                                    blocks=126
-                                                    end=blocks
+                                        while Read_times_compression_number!=count_times_compression:
+                                            predict=predict+1
+                                            if predict==16:
+                                                predict=0
+                                            b=format(predict,'04b')
+                                            if b[0:2]=="01":
+                                                b="10"+b[2:]
+                                            Save_predict_find=b+Save_predict_find
+                                            count_times_compression=count_times_compression+1
                                                     
-                                                    find_matches1_number1=0
-                                                    find_matches1_number2=0
-                                                    find_matches1_number3=0   
-                                                    
-                                                    
-                                                    
-                                                                                                 
-                                                                                                                                        
-                
-                                                    block=0
-                                                    b=Save_predict_find[times_compression*4:(times_compression*4)+4]
-                                                    
-                                                    Find=1
-                                                    block_compression1=0
-                                                    block_compression=0
-                                                    block_compression2=0
-                                                    long=len(sda3)
-                                                    #print(long)
-                                                    
-                                                    while block<long:
-                                                                                str_find_tree_maches1=sda3[block:block+1]
-                                                                                block=block+1
-                                                                                if str_find_tree_maches1=="1":
-                                                                                    str_find_tree_maches=sda3[block:block+(128)]
-                                                                                    sda12=sda12+str_find_tree_maches
-                                                                                    block=block+(128)
-                                                                                if str_find_tree_maches1=="0":
-                                                                                    blocks_count=0
-                                                                                    while blocks_count!=1:
-                                                                                        blocks_count=blocks_count+1
-                                                                                        str_find_tree_maches=sda3[block:block+blocks]
-                                                                                    
-                                                                
-                                                                                        sub_info=b
-                                                                                        sub2=b
-                                                                                        Find=1
-                                                                                        sda41=b+str_find_tree_maches[4:]
-                                                                                         
+
+                                        #print(Save_predict_find)
+
+                                        if sda3[0:9]=="000000001":
+                                            sda3=sda3[9:]
+                                        elif sda3[0:8]=="00000001":
+                                            sda3=sda3[8:]
+                                        elif sda3[0:7]=="0000001":
+                                            sda3=sda3[7:]
+                                        elif sda3[0:6]=="000001":
+                                            sda3=sda3[6:]
+                                        elif sda3[0:5]=="00001":
+                                            sda3=sda3[5:]
+                                        elif sda3[0:4]=="0001":
+                                            sda3=sda3[4:]
+                                        elif sda3[0:3]=="001":
+                                            sda3=sda3[3:]
+                                        elif sda3[0:2]=="01":
+                                            sda3=sda3[2:]
+                                        elif sda3[0:1]=="1":
+                                            sda3=sda3[1:]
+
+
+                                        open_binary_code_01=sda3[0:40]
+                                        open_binary_code_01_number=int(open_binary_code_01,2)
+                                        sda3=sda3[40:]
+                                        long_open_binary_code=open_binary_code_01_number
+                                        Infromation_program=sda3[:long_open_binary_code]
+                                        Program=0
+                                        Binary_code=""
+                                        sda3=sda3[long_open_binary_code:]
+
+                                        while Program!=long_open_binary_code:
+                                            Program_code=Infromation_program[Program:Program+1]
+                                            if Program_code=="0":
+                                                Binary_code=Program_code+Binary_code
+                                                Program=Program+1
+                                            elif Program_code=="1":
+                                                Program=Program+1
+                                                Program_code_6_bits=Infromation_program[Program:Program+6]
+                                                Binary_code=Program_code_6_bits+Binary_code
+                                                Program=Program+6
+                                                Program_code_6_bits_binary=int(Program_code_6_bits,2)
+                                                Secret_code=Infromation_program[Program:Program+Program_code_6_bits_binary]
+                                                Binary_code=Secret_code+Binary_code
+                                                Program=Program+Program_code_6_bits_binary
+                                                Forty=40
+                                                Left=0
+                                                Left=Forty-Program_code_6_bits_binary
+                                                Secret_left=Infromation_program[Program:Program+Left]
+                                                Binary_code=Secret_left+Binary_code
+                                                Program=Program+Left
+
+                                        extract=0
+                                        
+                                        if sda3[0:1]=="0":
+                                            extract=1
+                                        elif sda3[0:1]=="1":
+                                            extract=2
+
+                                        sda3[1:]
+                                        
+                                        sda12=""
+                                        #print(extract)
+                                        if extract==1:
+                                            sda12=sda3
+
+                                        elif extract==2:
+                                            times_compression=0
+                                            
+                                            compress_no=0
+                                            compress_yes=0
+                                            long2=len(sda3)
+                                            Deep=Read_times_compression_number
+                                            times2=Deep
+                                            
+                                        
+                                            
+                                            
+                                            block_compression2=0
+                                        
+                                        
+                                            start=-1
+                                            while  times_compression!=times2:
+
+                                                        start=0
+                                                        blocks=Blocks_long_number
+                                                        end=blocks
+                                                        
+                                                        find_matches1_number1=0
+                                                        find_matches1_number2=0
+                                                        find_matches1_number3=0   
+                                                        
+                                                        
+                                                        
+                                                                                                     
+                                                                                                                                            
+                    
+                                                        block=0
+                                                        b=Save_predict_find[times_compression*4:(times_compression*4)+4]
+                                                        
+                                                        Find=1
+                                                        block_compression1=0
+                                                        block_compression=0
+                                                        block_compression2=0
+                                                        long=len(sda3)
+                                                        #print(long)
+                                                        
+                                                        Binary_code1=""
+                                                        Circle_count=Binary_code[0:1]
+                                                        if Circle_count=="0":
+                                                            Binary_code=Binary_code[1:]
+                                                            Program=0
+                                                            Infromation_program=Binary_code
+                                                        
+                                                        while block<long:
+                                                                                    str_find_tree_maches1=sda3[block:block+blocks]
+
+                                                                                    find_matches1=str_find_tree_maches1.find(sub_info, start, end)
+                                                                                    find_matches1_1=int(find_matches1)
+
+                                                                                    Binary_code2=""
+                                                                                    Have_number=0
+
+                                                                                    Program_code1=Infromation_program[Program:Program+1]
+                                                                                    if Program_code1=="1":
+                                                                                        Program=Program+1
+                                                                                        Program_code_6_bits=Infromation_program[Program:Program+6]
+                                                                                        Binary_code1=Program_code_6_bits+Binary_code1
+                                                                                        Program=Program+6
+                                                                                        Program_code_6_bits_binary=int(Program_code_6_bits,2)
+                                                                                        Secret_code=Infromation_program[Program:Program+Program_code_6_bits_binary]
+                                                                                        Binary_code1=Secret_code+Binary_code1
+                                                                                        Binary_code2=Secret_code+Binary_code2
+                                                                                        Program=Program+Program_code_6_bits_binary
+                                                                                        Forty=40
+                                                                                        Left=0
+                                                                                        Left=Forty-Program_code_6_bits_binary
+                                                                                        Secret_left=Infromation_program[Program:Program+Left]
+                                                                                        Binary_code1=Secret_left+Binary_code1
+                                                                                        Binary_code2=Secret_left+Binary_code2
+                                                                                        Program=Program+Left
+
+                                                                                        Have_number=int(Binary_code2,2)
+                                                                                
+                                                                                    if find_matches1_1==0 and block!=Have_number:
+                                                                                        sda4=str_find_tree_maches1[:0]+b+str_find_tree_maches[2:]
+                                                                                        sda12=sda12+sda4
+                                                                                    else:
+                                                                                        sda4=str_find_tree_maches1
+                                                                                        sda12=sda12+sda4
                                                                                         
-                                                                            
+                                                                                    
+                                                                                    block=block+blocks
+                                                        times_compression=times_compression+1
+                                                        #print(times_compression)
+                                                        sda3=sda12
+                                                        sda12=""
 
-                                                              
-                                                                                        find_matches_1=int(str_find_tree_maches.find("0000", start, end))
-                                                                                        if find_matches_1==-1:
-                                                                                                         sda4=str_find_tree_maches[:find_matches_1]+b+str_find_tree_maches[find_matches_1+4:]
-                                                                                                         Find=0  
-                                                                                        find_matches_2=int(str_find_tree_maches.find("0101", start, end))
-                                                                                        if find_matches_2==-1:
-                                                                                                         sda4=str_find_tree_maches[:find_matches_2]+b+str_find_tree_maches[find_matches_2+4:]
-                                                                                                         Find=0    
-                                                                                        find_matches_3=int(str_find_tree_maches.find("1010", start, end))
-                                                                                        if find_matches_3==-1:
-                                                                                                         sda4=str_find_tree_maches[:find_matches_3]+b+str_find_tree_maches[find_matches_3+4:]
-                                                                                                         Find=0   
-
-                                                                                        find_matches_4=int(str_find_tree_maches.find("1111", start, end))
-                                                                                        if find_matches_4==-1:
-                                                                                                         sda4=str_find_tree_maches[:find_matches_4]+b+str_find_tree_maches[find_matches_4+4:]
-                                                                                                         Find=0 
-                                                                                                
-                                                                                        if Find==0:
-                                                                                               sda12=sda12+sda4
-
-                                                                                        if Find==1:
-                                                                                                           
- 
-                                                                                               sda12=sda12+sda41
-                                                                                               
-                                                                                               
-                                                                                               #print(Find)
-
-                                                                                        #print(Find)
-                                                                                        block=block+blocks
-                                                    times_compression=times_compression+1
-                                                    #print(times_compression)
-                                                    sda3=sda12
-                                                    sda12=""                  
+                                        Times_count=Times_count+1
                                     #print(len(sda3))
                                     n = int(sda3, 2)
                                     
@@ -810,9 +908,6 @@ class compression:
                                             x2 = time()
                                             x3=x2-x
                                             return print(x3)
-
-                                
-
 
  
                   
