@@ -455,11 +455,29 @@ class compression:
 
                                         long_file=len(sda10)
                                         long_after=len(sda9)
-                                        if long_file>long_after or lenf:
+                                        if long_file>long_after and long_after<=168 or lenf>39 or Deep100>=long_after:
                                             Deep101=Deep101+1
                                             sda11=sda9
                                             Find_guess=1
+                                        elif long_file<=long_after:
+                                            sda3=sda9
+                                            Deep100=Deep100+1
+                                            Deep101=Deep101+1
+                                            sda9=""
+                                            sda19=""
+                                            start=-1
+                                            times_compression=0
+                                            predict=-1
                                             
+                                        elif long_file>long_after:
+                                            sda3=sda9
+                                            Deep100=Deep100+1
+                                            Deep101=Deep101+1
+                                            sda9=""
+                                            sda19=""
+                                            start=-1
+                                            times_compression=0
+                                            predict=-1    
        
                                     sda24=bin(Deep101)[2:]
                                     lenf=len(sda24)
