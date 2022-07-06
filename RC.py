@@ -743,8 +743,9 @@ class compression:
                                         sda3=sda3[long_open_binary_code:]
 
                                         if long_open_binary_code!=0:
+                                            
 
-                                            while Program!=long_open_binary_code:
+                                            while Program<=long_open_binary_code:
                                                 Program_code=Infromation_program[Program:Program+1]
                                                 if Program_code=="0":
                                                     Binary_code=Program_code+Binary_code
@@ -765,6 +766,7 @@ class compression:
                                                     Secret_left=Infromation_program[Program:Program+Left]
                                                     Binary_code=Secret_left+Binary_code
                                                     Program=Program+Left
+                                                   
 
                                         extract=0
                                         
@@ -774,6 +776,7 @@ class compression:
                                             extract=2
 
                                         sda3[1:]
+                                        
                                         
                                         sda12=""
                                         #print(extract)
@@ -883,6 +886,7 @@ class compression:
                                                                                         
                                                                                     
                                                                                     block=block+blocks2
+                                                                                    
                                                         times_compression=times_compression+1
                                                         #print(times_compression)
                                                         sda3=sda12
@@ -898,7 +902,7 @@ class compression:
                                     lenf=len(sda3)
                                         
                                     add_bits118=""
-                                    count_bits=lenf%8
+                                    count_bits=8-lenf%8
                                     z=0
                                    
                                     if count_bits!=0:
