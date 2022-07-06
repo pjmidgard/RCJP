@@ -875,6 +875,8 @@ class compression:
                                                                                     if find_matches1_1==0 and block!=Have_number:
                                                                                         sda4=str_find_tree_maches1[:0]+b+str_find_tree_maches[2:]
                                                                                         sda12=sda12+sda4
+                                                                                        blocks=blocks-2
+                                                                                        
                                                                                     else:
                                                                                         sda4=str_find_tree_maches1
                                                                                         sda12=sda12+sda4
