@@ -703,9 +703,9 @@ class compression:
                                         Read_times_compression_info=""
                                         
                                         Read_times_compression_info=sda3[0:40]
-                                        #Error Read_times_compression_info
+                                        
                                         Save_predict_find=""
-                                        Read_times_compression_number = sda3(Read_times_compression_info,2)
+                                        Read_times_compression_number =int(Read_times_compression_info,2)
                                         
                                         sda3=sda3[40:]
 
@@ -749,7 +749,10 @@ class compression:
 
 
                                         open_binary_code_01=sda3[0:40]
-                                        open_binary_code_01_number=int(open_binary_code_01,2)
+                                       
+                                        
+                                        open_binary_code_01_number=int(open_binary_code_01,2)#Error
+                                        
                                         sda3=sda3[40:]
                                         long_open_binary_code=open_binary_code_01_number
                                         Infromation_program=sda3[:long_open_binary_code]
@@ -808,7 +811,7 @@ class compression:
                                             
                                             
                                             block_compression2=0
-                                        
+                                          
                                         
                                             start=-1
                                             while  times_compression!=times2:
@@ -884,11 +887,13 @@ class compression:
                                                                                     if find_matches1_1==0 and block!=Have_number:
                                                                                         sda4=str_find_tree_maches1[:0]+b+str_find_tree_maches[2:]
                                                                                         sda12=sda12+sda4
+                                                                                       
                                                                                         blocks2=blocks-2
                                                                                         
                                                                                     else:
                                                                                         sda4=str_find_tree_maches1
                                                                                         sda12=sda12+sda4
+                                                                                        
                                                                                         blocks2=blocks
                                                                                         
                                                                                     
@@ -896,10 +901,13 @@ class compression:
                                                         times_compression=times_compression+1
                                                         #print(times_compression)
                                                         sda3=sda12
+                                                        
                                                         sda12=""
+                                                        
 
                                         Times_count=Times_count+1
-                                    #print(len(sda3))
+                                        
+                                         
                                     n = int(sda3, 2)
                                     
                                     
