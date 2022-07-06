@@ -695,7 +695,7 @@ class compression:
                               
                                        
                                     Times_count=0
-                                    while Times_extract!=Times_count:
+                                    while Times_extract<=Times_count:
 
                                         Blocks_long=sda3[0:40]
                                         sda3=sda3[40:]
