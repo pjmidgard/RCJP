@@ -498,6 +498,27 @@ class compression:
                                                                                                                     
                                                                                                                     
                                     sda11=add_bits118+sda24+sda11
+
+
+                                    sda24=bin(lenf2)[2:]
+                                    lenf=len(sda24)
+                                    if lenf>40:
+                                        print("File too big")
+                                        raise SystemExit
+                                                                                            
+                                                                                            
+                                                                                        
+                                    add_bits118=""
+                                    count_bits=40-lenf%40
+                                    z=0
+                                    if count_bits!=0:
+                                        if count_bits!=40:
+                                            while z<count_bits:
+                                                add_bits118="0"+add_bits118
+                                                z=z+1
+                                                                                                                    
+                                                                                                                    
+                                    sda11=add_bits118+sda24+sda11
                                     
                                     n = int(sda11, 2)
                                 
@@ -686,6 +707,12 @@ class compression:
                                 
                                     
                                     sda3=sda2
+
+                                    File_size=sda3[0:40]
+                                    sda3=sda3[40:]
+                                    File_size_number=int(File_size,2)
+
+                                    
                                     Times_extract_of_times=sda3[0:40]
                                     sda3=sda3[40:]
                                     Times_extract_number=0
@@ -932,6 +959,9 @@ class compression:
                                                                     
                                                                     
                                     sda3=add_bits118+sda3
+                                    File_size_after=len(sda3)
+                                    
+                                    sda3=sda3[File_size_after-File_size_number:File_size_after]
                                       
                                     n = int(sda3, 2)
                                     
