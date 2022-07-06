@@ -691,7 +691,7 @@ class compression:
                                     Times_extract_number=0
                                     Times_extract_number=int(Times_extract_of_times,2)
                                     Time_extract=0
-                                    Time_extract=Times_extract_number
+                                    Times_extract=Times_extract_number
                               
                                        
                                     Times_count=0
@@ -700,8 +700,10 @@ class compression:
                                         Blocks_long=sda3[0:40]
                                         sda3=sda3[40:]
                                         Blocks_long_number=int(Blocks_long,2)
+                                        Read_times_compression_info=""
                                         
                                         Read_times_compression_info=sda3[0:40]
+                                        #Error Read_times_compression_info
                                         Save_predict_find=""
                                         Read_times_compression_number = sda3(Read_times_compression_info,2)
                                         
