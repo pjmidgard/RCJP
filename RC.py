@@ -455,30 +455,12 @@ class compression:
 
                                         long_file=len(sda10)
                                         long_after=len(sda9)
-                                        if long_file>long_after and long_after<=168 or lenf>39 or Deep100>=long_after:
+                                        if long_file>long_after or lenf>39 or Deep100>=long_after:
+                                            Deep101=Deep101+1
                                             sda11=sda9
                                             Find_guess=1
                                             
-                                        elif long_file<=long_after:
-                                            sda3=sda9
-                                            Deep100=Deep100+1
-                                            Deep101=Deep101+1
-                                            sda9=""
-                                            sda19=""
-                                            start=-1
-                                            times_compression=0
-                                            predict=-1
-                                            
-                                        elif long_file>long_after:
-                                            sda3=sda9
-                                            Deep100=Deep100+1
-                                            Deep101=Deep101+1
-                                            sda9=""
-                                            sda19=""
-                                            start=-1
-                                            times_compression=0
-                                            predict=-1
-                                            
+       
                                     sda24=bin(Deep101)[2:]
                                     lenf=len(sda24)
                                     if lenf>40:
@@ -751,7 +733,7 @@ class compression:
                                         open_binary_code_01=sda3[0:40]
                                        
                                         
-                                        open_binary_code_01_number=int(open_binary_code_01,2)#Error
+                                        open_binary_code_01_number=int(open_binary_code_01,2)
                                         
                                         sda3=sda3[40:]
                                         long_open_binary_code=open_binary_code_01_number
@@ -882,17 +864,20 @@ class compression:
                                                                                             
 
                                                                                             Have_number=int(Binary_code2,2)
+                                                                                          
                                                                                             Infromation_program=Infromation_program[Program+Left:]
                                                                                 
                                                                                     if find_matches1_1==0 and block!=Have_number:
                                                                                         sda4=str_find_tree_maches1[:0]+b+str_find_tree_maches[2:]
                                                                                         sda12=sda12+sda4
+                                                                                        
                                                                                        
                                                                                         blocks2=blocks-2
                                                                                         
                                                                                     else:
                                                                                         sda4=str_find_tree_maches1
                                                                                         sda12=sda12+sda4
+                                                                                        
                                                                                         
                                                                                         blocks2=blocks
                                                                                         
@@ -901,6 +886,8 @@ class compression:
                                                         times_compression=times_compression+1
                                                         #print(times_compression)
                                                         sda3=sda12
+                                                        
+                                                        
                                                         
                                                         sda12=""
                                                         
