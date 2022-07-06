@@ -817,7 +817,7 @@ class compression:
                                           
                                         
                                             start=-1
-                                            while  times_compression!=times2:
+                                            while  times_compression<=times2:
 
                                                         start=0
                                                         blocks=Blocks_long_number
@@ -851,7 +851,7 @@ class compression:
                                                         Infromation_program=Binary_code
                                                         Long_Info=len(Infromation_program)
                                                         
-                                                        while block<long:
+                                                        while block<=long:
                                                                                     str_find_tree_maches1=sda3[block:block+blocks]
                                                                                     sub_info="01"
                                                                                     
@@ -908,6 +908,7 @@ class compression:
                                                         times_compression=times_compression+1
                                                         #print(times_compression)
                                                         sda3=sda12
+                                                        print(sda12)
                                                         
                                                         
                                                         
