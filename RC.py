@@ -758,6 +758,7 @@ class compression:
                                                     Binary_code=Program_code+Binary_code
                                                     Program=Program+1
                                                 elif Program_code=="1":
+                                                    Binary_code=Program_code+Binary_code
                                                     Program=Program+1
                                                     Program_code_6_bits=Infromation_program[Program:Program+6]
                                                     Binary_code=Program_code_6_bits+Binary_code
