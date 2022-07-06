@@ -689,6 +689,7 @@ class compression:
                                     Times_extract_of_times=sda3[0:40]
                                     sda3=sda3[40:]
                                     Times_extract_number=int(Times_extract_of_times,2)
+                                                                  Time_extract=Times_extract_number
                                     Times_count=0
                                     while Times_extract!=Times_count:
 
