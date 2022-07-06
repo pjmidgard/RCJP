@@ -894,7 +894,22 @@ class compression:
 
                                         Times_count=Times_count+1
                                         
-                                         
+                                        
+                                    lenf=len(sda3)
+                                        
+                                    add_bits118=""
+                                    count_bits=lenf%8
+                                    z=0
+                                   
+                                    if count_bits!=0:
+                                          if count_bits!=8:
+                                               while z<count_bits:
+                                                   add_bits118="0"+add_bits118
+                                                   z=z+1
+                                                                    
+                                                                    
+                                    sda3=add_bits118+sda3
+                                      
                                     n = int(sda3, 2)
                                     
                                     
