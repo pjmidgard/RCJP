@@ -859,7 +859,7 @@ class compression:
                                                                                             Program_code_6_bits_binary=int(Program_code_6_bits,2)
                                                                                             Secret_code=Infromation_program[Program:Program+Program_code_6_bits_binary]
                                                                                             Binary_code1=Secret_code+Binary_code1
-                                                                                            Binary_code2=Secret_code+Binary_code2
+                                                                                            
                                                                                             Program=Program+Program_code_6_bits_binary
                                                                                             Forty=40
                                                                                             Left=0
