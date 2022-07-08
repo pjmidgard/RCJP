@@ -183,6 +183,7 @@ class compression:
                                 Where2=0
                                 Where3=0
                                 Deep101=0
+                                Where4=0
                                 
                                 
 
@@ -205,7 +206,7 @@ class compression:
                                     start=-1
                                     Find_guess=0
                                     while Find_guess!=1:
-                                        Where4=0
+                                        
                                         while  times_compression!=times2 and len(sda3)>=184+Deep100:
 
 
@@ -266,9 +267,7 @@ class compression:
                                                                                         sda4=sda11 
                                                                                         Where4=Where4+1
                                                                                         
-                                                                                                                                                                 
-                                                                                        Where3=block+0
-                                                                                        Where2=Where4
+                                                                                    Where2=Where4
                                                                                         
                                                                                         
                                                                                         
@@ -369,8 +368,9 @@ class compression:
                                                         
                 
                                                     sda3=sda6
-                                                    Where2=0
-                                                    Where3=0
+                                                    
+                                                    Where4=0
+                                                    
                                                     
                                                     #print(len(sda6))
                                                     sda6=""
