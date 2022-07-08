@@ -180,8 +180,8 @@ class compression:
                                 sda19=""
                                 sda10=sda3
                                 predict=-1
-                                Where2=0
-                                Where3=0
+                               
+                              
                                 Deep101=0
                                 Where4=0
                                 
@@ -267,14 +267,8 @@ class compression:
                                                                                         sda4=sda11 
                                                                                         Where4=Where4+1
                                                                                         
-                                                                                    Where2=Where4
-                                                                                        
-                                                                                        
-                                                                                        
-                                                                                        
-
-
-                                                                                    Where=0
+                                                                                  
+                                                                         
                                                                                      
                                                                                     sub_info1="01"                                       
                                                                                     find_matches2=str_find_tree_maches.find(sub_info1, start, end)
@@ -282,9 +276,9 @@ class compression:
                                                                                     if find_matches1_2==0:
                                                                                         Where=block+0
                                                                                         
-                                                                                        if Where!=0:
+                                                                                        if Where4!=0:
                                                                                     
-                                                                                            sda20=bin(Where-Where2)[2:]
+                                                                                            sda20=bin(Where4)[2:]
                                                                                             lenf=len(sda20)
                                                                                             if lenf>size_compress:
                                                                                                 print("File too big")
