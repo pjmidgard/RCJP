@@ -472,7 +472,7 @@ class compression:
                                         long_after=len(sda9)
                                         #print(long_after)
                                         
-                                        if long_file>long_after and long_after<=168 or lenf>39 or Deep100>=long_after or Deep101>=65535:
+                                        if long_file>long_after or lenf>39 or Deep100>=long_after or Deep101>=65535:
                                             Deep101=Deep101+1
                                             sda11=sda9
                                             Find_guess=1
