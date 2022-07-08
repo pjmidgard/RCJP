@@ -128,7 +128,7 @@ class compression:
                                             sda="0"+sda
                                             z=z+1
                                             
-                                    sda=sda+sda2
+                                   
 
                                     if countraz==1:
                                         sda2=sda
@@ -643,7 +643,7 @@ class compression:
                                             sda="0"+sda
                                             z=z+1
                                             
-                                    sda=sda+sda2
+                                   
 
                                     if countraz==1:
                                         sda2=sda
