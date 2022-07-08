@@ -759,31 +759,9 @@ class compression:
                                         Program=0
                                         Binary_code=""
                                         sda3=sda3[long_open_binary_code:]
+                                        Binary_code=Infromation_program
 
-                                        if long_open_binary_code!=0:
-                                            
-
-                                            while Program<=long_open_binary_code:
-                                                Program_code=Infromation_program[Program:Program+1]
-                                                if Program_code=="0":
-                                                    Binary_code=Program_code+Binary_code
-                                                    Program=Program+1
-                                                elif Program_code=="1":
-                                                    Binary_code=Program_code+Binary_code
-                                                    Program=Program+1
-                                                    Program_code_6_bits=Infromation_program[Program:Program+6]
-                                                    Binary_code=Program_code_6_bits+Binary_code
-                                                    Program=Program+6
-                                                    Program_code_6_bits_binary=int(Program_code_6_bits,2)
-                                                    Secret_code=Infromation_program[Program:Program+Program_code_6_bits_binary]
-                                                    Binary_code=Secret_code+Binary_code
-                                                    Program=Program+Program_code_6_bits_binary
-                                                    Forty=40
-                                                    Left=0
-                                                    Left=Forty-Program_code_6_bits_binary
-                                                    Secret_left=Infromation_program[Program:Program+Left]
-                                                    Binary_code=Secret_left+Binary_code
-                                                    Program=Program+Left
+                                                
                                                    
 
                                         extract=0
