@@ -1,4 +1,4 @@
-Algorithm RC#
+#Algorithm RC
 
 Random Compression
 
