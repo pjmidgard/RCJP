@@ -207,7 +207,7 @@ class compression:
                                     Find_guess=0
                                     while Find_guess!=1:
                                         
-                                        while  times_compression!=times2 and len(sda3)>=184+Deep100:
+                                        while  times_compression!=times2 and len(sda3)>=184:
 
 
                                                     
@@ -471,6 +471,7 @@ class compression:
                                         long_file=len(sda10)
                                         long_after=len(sda9)
                                         #print(long_after)
+                                        
                                         if long_file>long_after and long_after<=168 or lenf>39 or Deep100>=long_after or Deep101>=65535:
                                             Deep101=Deep101+1
                                             sda11=sda9
@@ -486,9 +487,9 @@ class compression:
                                             predict=-1
                                             
                                         elif long_file>long_after:
-                                            sda3=sda9
+                                            sda3=sda10
                                             Deep100=Deep100+1
-                                            Deep101=Deep101+1
+                                            
                                             sda9=""
                                             sda19=""
                                             start=-1
