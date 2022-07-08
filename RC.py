@@ -266,7 +266,7 @@ class compression:
                                                                                         
                                                                                        
                                                                                         
-                                                                                        sda11 = sda11[-1] + sda11[:-1] 
+                                                                                        
                                                                                         sda4=sda11
                                                                                         
                                                                                         Where4=Where4+1
@@ -332,7 +332,8 @@ class compression:
                                                                                                                          
                                                                                 if Find!=0:
                                                                                     
-                                                                                   
+                                                                                    sda4=sda11
+                                                                                    sda11 = sda11[-1] + sda11[:-1]
                                                                                     sda6=sda6+sda4    
                                                                                     compress_yes=compress_yes+1                                                                
                                                                               
