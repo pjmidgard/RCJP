@@ -264,17 +264,19 @@ class compression:
 
                                                                                         sda11=str_find_tree_maches[:0]+"01"+str_find_tree_maches[4:] 
                                                                                         
-                                                                                        sda4=sda11 
+                                                                                        
                                                                                         Where4=Where4+1
                                                                                         
                                                                                   
                                                                          
                                                                                      
                                                                                     
-                                                                                    sda11 = sda11[-1] + sda11[:-1]     
+                                                                                    sda11 = sda11[-1] + sda11[:-1] 
+                                                                                    sda4=sda11
+                                                                                         
                                                                                     sub_info1="01" 
                                                                                                                      
-                                                                                    find_matches2=str_find_tree_maches.find(sub_info1, start, end)
+                                                                                    find_matches2=sda4.find(sub_info1, start, end)
                                                                                     find_matches1_2=int(find_matches2)
                                                                                     if find_matches1_2==0:
                                                                                         Where=block+0
@@ -345,7 +347,10 @@ class compression:
                                                                                 
                                                                                     block_compression=0
                                                                                     block_compression1=0
-                                                                                    sda6=sda6+str_find_tree_maches
+                                                                                    sda11=str_find_tree_maches 
+                                                                                    sda4=sda11
+                                                                                    sda11 = sda11[-1] + sda11[:-1] 
+                                                                                    sda6=sda6+sda4
                                                                                     
                                                                                     sda5=""
                                                                                     sda7=""
