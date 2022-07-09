@@ -196,7 +196,7 @@ class compression:
                                     long2=len(sda3)
                                     Deep=long2//28
                                     times2=Deep
-                                    Deep100=1024
+                                    Deep100=16
                                     
                                 
                                     
