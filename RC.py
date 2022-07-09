@@ -262,7 +262,7 @@ class compression:
                                            
                                                                                     if find_matches1_1==0:
 
-                                                                                        str_find_tree_maches=str_find_tree_maches[:0]+"01"+str_find_tree_maches[4:] 
+                                                                                        sda4=str_find_tree_maches[:0]+"01"+str_find_tree_maches[4:] 
                                                                                         
                                                                                        
                                                                                         
@@ -335,8 +335,10 @@ class compression:
                                                                                     
 
                                                                                         
-                                                                                    str_find_tree_maches = str_find_tree_maches[-1] + str_find_tree_maches[:-1]      
-                                                                                    compress_yes=compress_yes+1                                                        
+                                                                                    sda4 = sda4[-1:] + sda4[:-1]    
+                                                                                    
+                                                                                    compress_yes=compress_yes+1   
+                                                                                    sda6+sda6+sda4                                                     
                                                                               
                                                                                     sda5=""
                                                                                     sda7=""
@@ -354,9 +356,14 @@ class compression:
 
                                                                                    
                                                                                     
-                                                                                    str_find_tree_maches = str_find_tree_maches[-1] + str_find_tree_maches[:-1] 
-                                                                                   
+                                                                                    
+                                                                                    sda4=str_find_tree_maches
+                                                                                    sda4= sda4[-1:] + sda4[:-1] 
                                                                                     sda6=sda6+sda4
+                                                                                    
+                                                                                    
+                                                                                   
+                                                                             
                                                                                     
                                                                                     sda5=""
                                                                                     sda7=""
@@ -472,14 +479,14 @@ class compression:
                                         long_after=len(sda9)
                                         #print(long_after)
                                         
-                                        if long_file>long_after or lenf>39 or Deep100>=long_after or Deep101>=65535:
-                                            Deep101=Deep101+1
+                                        if long_file>long_after and long_after<=168 or lenf>39 or Deep100>=long_after:
+                                          
                                             sda11=sda9
                                             Find_guess=1
                                         elif long_file<=long_after:
-                                            sda3=sda9
+                                            sda3=sda10
                                             Deep100=Deep100+1
-                                            Deep101=Deep101+1
+                                            
                                             sda9=""
                                             sda19=""
                                             start=-1
@@ -487,9 +494,9 @@ class compression:
                                             predict=-1
                                             
                                         elif long_file>long_after:
-                                            sda3=sda10
+                                            sda3=sda9
                                             Deep100=Deep100+1
-                                            
+                                            Deep101=Deep101+1
                                             sda9=""
                                             sda19=""
                                             start=-1
