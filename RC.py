@@ -878,7 +878,7 @@ class compression:
                                                                                             Binary_code1=Secret_code+Binary_code1
                                                                                             
                                                                                             Program=Program+Program_code_6_bits_binary
-                                                                                            Forty=40
+                                                                                            Forty=63
                                                                                             Left=0
                                                                                             Left=Forty-Program_code_6_bits_binary
                                                                                             Secret_left=Infromation_program[Program:Program+Left]
