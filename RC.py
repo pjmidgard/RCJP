@@ -215,7 +215,7 @@ class compression:
 
                                                     start=0
                                                     blocks=Deep100
-                                                    size_compress=40
+                                                    size_compress=63
                                                     end=blocks
                                                     
                                                     find_matches1_number1=0
