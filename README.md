@@ -4,6 +4,20 @@ Random Compression
 
 Algorithm RC: 
 
-Find 0000-1111 if string find string 0 save as 01, Move information like queue string char move bits of block back -1 and front -1, If e.g.: 000001001111-111100000100, if find 01, if find 01XX-10XX, save where times save. 0 if end if file times compress else 1 and where it that on top. This algorithm can compress Random generated files. Blocks long need increase from 16bits-while get size of file every time. Times and times of times. Add 1 on the start and 0-7 zeros. 0 every circle or where 1, 6 bits and long of zeros. Times (2**63)-1.
-
-Binary file format .bin.
+Need to try to predict 0000-1111 except
+01XX-10XX. Need to find string if cell
+equal 0 save as 01 String containing bits.
+String need to move in X value -1: and :-1
+string need to move of block back -1 and
+front -1 e.g.: 000001001111-111100000100,
+if we find on the string 01, save where:
+0 if end if file times compress else 1
+and where it that on top. Save 6 bits
+and long of zeros long (2**63)-1.
+Save times of compression.Blocks
+long need increase from 16 bits-while
+increase size of block compare size
+of file long of bits need to save.
+Save Times of times of compression.
+Add 1 on the start and 0-7 zeros.
+Binary file format .bin
